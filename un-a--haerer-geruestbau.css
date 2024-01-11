@@ -1,0 +1,44 @@
+/* [data-theme="haerer-geruestbau"] */
+/* -------------------------------------- */
+un-a[data-theme="haerer-geruestbau"] a {
+
+	position: relative;
+	
+	outline-style: none thin var(--complementary);
+	outline-offset: -1px;
+	border-collapse: collapse;
+	border-radius: 1px;
+	box-shadow: 0px 0px 0px 0px black;
+	padding: 6px 12px; /* needed for hover fx */
+	
+	color: color-mix(in oklab, var(--primary) 100%, white);
+	font-weight: normal;
+	text-transform: uppercase;
+	
+	text-decoration: underline solid color-mix(in oklab, var(--complementary) 40%, white);
+	
+	transition-property: transform, box-shadow;
+	transition-delay: 0s;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+un-a[data-theme="haerer-geruestbau"] :is(a:hover, a.current-location)::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	border-bottom: thin solid black;
+	width: calc(100% + 31px);
+}
+un-a[data-theme="haerer-geruestbau"] :is(a:hover, a.current-location) {
+	background-color: color-mix(in oklab, var(--complementary) 0%, white);
+	outline: thin solid black;
+	outline-offset: 0px;
+}
+un-a[data-theme="haerer-geruestbau"] :is(a:active) {
+	background-color: color-mix(in oklab, var(--complementary) 35%, white);
+	text-decoration-color: color-mix(in oklab, var(--complementary) 15%, white);
+	outline: thin solid black;
+	outline-offset: 0px;
+}

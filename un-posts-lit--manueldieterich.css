@@ -1,0 +1,227 @@
+un-posts-lit[data-theme="manueldieterich"] {
+	display: flex;
+	flex-direction: row;
+	row-gap: 40px;
+	column-gap: clamp(58px, 10vw, 200px);
+	/*! padding: 25px; */
+	margin-bottom: 2vh;
+}
+
+/* sortorder */
+/* ----------------- /*
+
+un-posts-lit[data-theme=manueldieterich] 
+fieldset.sortorder {
+	flex-direction: row;
+}
+
+un-posts-lit[data-theme="manueldieterich"] 
+.sortcriteria label {
+	margin-right: 30px;
+}
+
+/* table of contents */
+/* ---------------------------- */
+
+un-posts-lit[data-theme="manueldieterich"] .toc {
+	display: flex;
+	flex-direction: column;
+	row-gap: 5px;
+	position: sticky;
+	top: 5%;
+	/*! align-self: flex-start; */
+	/*! height: 200px; */
+}
+
+un-posts-lit[data-theme="manueldieterich"] .toc-item {
+	font-size: small;
+	color: black;
+	text-decoration: none;
+}
+
+un-posts-lit[data-theme="manueldieterich"] .toc-item:hover {
+	color: var(--page-color);
+}
+
+/* input radio sortdirection */
+/* -------------------------- */
+
+un-posts-lit[data-theme="manueldieterich"] 
+input[name="sortdirection"] {
+	/* radio svg */
+	appearance: none;
+}
+
+un-posts-lit[data-theme="manueldieterich"] 
+input[name="sortdirection"] ~ label svg {
+	/* radio svg */
+	width: 15px;
+	fill: var(--page-color-light);
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+un-posts-lit[data-theme="manueldieterich"] 
+input[name="sortdirection"]:checked ~ label svg {
+	/* radio svg */
+	opacity: 1;
+}
+
+/* input radio sortdirection */
+/* -------------------------- */
+
+un-posts-lit[data-theme="manueldieterich"] 
+input[name="sortcriteria"] {
+	border-radius: 50%;
+}
+
+un-posts-lit[data-theme="manueldieterich"] 
+input[name="sortcriteria"]:checked {
+	outline: 5px solid black;
+	outline-offset: -6px;
+}
+
+/* scrollToTop button */
+/* --------------------------- */
+
+un-posts-lit[data-theme="manueldieterich"] a#scrollToTop {
+	appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	transform: rotate(-90deg);
+	text-decoration: none;
+	font-size: xx-large;
+	color: var(--page-color-transpest);
+	position: fixed;
+	bottom: 3vh;
+	right: 3vw;
+	z-index: 99;
+}
+
+un-posts-lit[data-theme="manueldieterich"] a#scrollToTop:hover {
+	color: var(--page-color-light);
+}
+
+/* all posts */
+/* --------------------------- */
+
+un-posts-lit[data-theme="manueldieterich"] 
+section.posts {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 25px;
+}
+
+un-posts-lit[data-theme="manueldieterich"] .ctrls {
+	display: none;
+}
+
+/* single post */
+/* --------------------------- */
+
+un-posts-lit[data-theme="manueldieterich"]
+.content {
+	margin-left: 0;
+	animation-name: fade-in;
+	animation-duration: 350ms;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+un-posts-lit[data-theme="manueldieterich"]
+.content.hide {
+	animation-name: fade-out;
+	animation-duration: 250ms;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+un-posts-lit[data-theme="manueldieterich"]:is([data-page="veranstaltungen"], [data-page="veroffentlichungen"]) 
+.post {
+	border-bottom: thin dotted grey;
+}
+
+un-posts-lit[data-theme="manueldieterich"] 
+.meta {
+	display: grid;
+	grid-auto-columns: auto;
+	grid-auto-flow: row;
+	cursor: pointer;
+	column-gap: max(3%, 35px);
+	border-bottom: thin dotted grey;
+	width: 100%;
+	align-items: baseline;  
+}
+un-posts-lit[data-theme="manueldieterich"] .meta-title {
+	line-height: 1.4;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+un-posts-lit[data-theme="manueldieterich"] 
+.meta * {
+	pointer-events: none;
+}
+
+un-posts-lit[data-theme="manueldieterich"]:is([data-page="veranstaltungen"], [data-page="veroffentlichungen"]) 
+.meta {
+	border-bottom: none;
+}
+
+un-posts-lit[data-theme="manueldieterich"] 
+.meta {
+	
+}
+
+un-posts-lit[data-theme="manueldieterich"] 
+.meta-date {
+	font-size: .7rem;
+	color: gray;
+	justify-self: left;
+}
+
+un-posts-lit[data-theme="manueldieterich"]:is([data-page="veranstaltungen"], [data-page="veroffentlichungen"]) 
+.meta-date {
+	font-size: medium;
+	color: black;
+}
+
+un-posts-lit[data-theme="manueldieterich"] 
+.meta-tags {
+	font-size: .7rem;
+	color: gray;
+	justify-self: right;
+}
+
+/* @media */
+/* --------------------- */
+
+@media (min-width: 790px) {
+	
+	un-posts-lit[data-theme="manueldieterich"] .meta {
+		grid-auto-flow: column;
+		margin: 0;
+	}
+	
+	un-posts-lit[data-theme="manueldieterich"][data-page="/"] .meta-date {
+	 justify-self: right;
+  }
+	
+	un-posts-lit[data-theme="manueldieterich"] .content {
+	 margin-left: 20px;
+	}
+	
+}
+
+@media (min-width: 1000px) {
+	
+	/* ctrls */
+	un-posts-lit[data-theme="manueldieterich"] .ctrls {
+		width: 20%;
+		display: flex;
+		flex-direction: column;
+		row-gap: 3vh;
+	}
+	
+}

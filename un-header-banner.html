@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>Page Title</title>
+	<link rel='stylesheet' type='text/css' media='screen' href='un-header-banner.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='un-cols.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='site.css'>
+	<script src='un-header-banner.js' type="module"></script>
+	<script src="un-cols.js" type="module"></script>
+	<style>
+		.col {
+			border: thin solid darkgrey;
+		}
+
+		.item {
+			width: 250px;
+			height: 300px;
+			background-color: aqua;
+		}
+
+		.item#one {
+			background-color: lightblue;
+			width: 500px;
+		}
+
+		.item#two {
+			background-color: lightgreen;
+		}
+
+		.item#three {
+			background-color: lightseagreen;
+			width: 600px;
+			height: 150px;
+		}
+
+		.item#four {
+			background-color: lightgoldenrodyellow;
+		}
+
+		.item#five {
+			background-color: lightgray;
+		}
+
+		.item#six {
+			background-color: lightyellow;
+		}
+		.item#seven {
+			background-color: lightskyblue;
+		}
+		.item#eight {
+			background-color: lightpink;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<un-header-banner>
+			<img class="background" src="assets/header-2-top.jpg">
+			<img class="background" src="assets/header-2-middle.jpg">
+			<img class="background" src="assets/header-2-bottom.jpg">
+			<img class="foreground" src="assets/speech-19.svg">
+		</un-header-banner>
+	</header>
+	<main>
+		<un-cols data-layout="three">
+			<div class="col one">
+				<div class="item" id="one"></div>
+				<div class="item" id="two"></div>
+			</div>
+			<div class="col two">
+				<div class="item" id="three"></div>
+				<div class="item" id="four"></div>
+				<div class="item" id="five"></div>
+			</div>
+			<div class="col three">
+				<div class="item" id="six"></div>
+				<div class="item" id="seven"></div>
+				<div class="item" id="eight"></div>
+			</div>
+		</un-cols>
+	</main>
+	
+</body>
+</html>

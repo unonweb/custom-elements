@@ -1,0 +1,169 @@
+/* [data-theme="haerer-geruestbau"] */
+/* ---------------------------------- */
+
+un-nav[data-theme="haerer-geruestbau"] {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	row-gap: 1rem;
+}
+un-nav[data-theme="haerer-geruestbau"] .trigger {
+	/*! margin: 0 1.5rem; */
+	
+}
+un-nav[data-theme="haerer-geruestbau"][data-overlay="true"][data-broken="true"] .content {
+	flex-direction: column;
+	justify-content: right;
+	align-items: end;
+	gap: 0.5rem;
+	margin-left: -10px; /* alignment correction to compensate for padding of <un-a> */
+	text-align: center;
+	/* box style */
+	background-color: transparent;
+	box-shadow: 1px 2px 2px 0px none; /* <offset-x> <offset-y> <blur-radius> <spread-radius> <color> */
+	outline: thin none var(--primary);
+	
+	width: fit-content;
+	padding: var(--default-padding-y) var(--default-padding-x);
+	right: 0%;
+	top: 66%;
+}
+
+/* list-items */
+/* --------------- */
+
+un-nav[data-theme="haerer-geruestbau"] li {
+	flex-basis: max-content;
+	position: relative;
+	
+	outline: solid thin black;
+	outline-offset: 0px;
+	border-collapse: collapse;
+	border-radius: 1px;
+	box-shadow: 0px 0px 0px 0px black;
+	padding: 6px 12px; /* needed for hover fx */
+	
+	font-weight: bold;
+	text-transform: none;
+	
+	transition-property: transform, box-shadow;
+	transition-delay: 0s;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+un-nav[data-theme="haerer-geruestbau"] li.current-location::before {
+	/* decorative line */
+	content: '';
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	border-bottom: thin solid black;
+	width: calc(100% + 31px);
+}
+un-nav[data-theme="haerer-geruestbau"] li::before {
+	/* decorative line */
+	content: '';
+	display: none;
+	position: absolute;
+	top: 100%;
+	right: -31px;
+	border-bottom-width: thin;
+	border-bottom-style: dotted;
+	border-bottom-color: black;
+	width: calc(100% + 31px);
+}
+un-nav[data-theme="haerer-geruestbau"] li.current-location {
+	background-color: white;
+	outline: thin solid black;
+	outline-offset: 0px;
+}
+
+un-nav[data-theme="haerer-geruestbau"] li:active {
+	background-color: whitesmoke;
+	outline: thin solid black;
+	outline-offset: 0px;
+}
+
+/* list-item - overlay */
+un-nav[data-theme="haerer-geruestbau"][data-overlay="true"][data-broken="true"] li {
+	background-color: white;
+	outline: thin solid black;
+	outline-offset: 0px;
+}
+un-nav[data-theme="haerer-geruestbau"][data-overlay="true"][data-broken="true"] li.current-location {
+	background-color: whitesmoke;
+	outline: thin solid black;
+	outline-offset: 0px;
+}
+
+/* anchors */
+/* --------------- */
+un-nav[data-theme="haerer-geruestbau"] a {
+	color: var(--primary);
+	text-decoration-line: none;
+	text-decoration-style: solid;
+	text-decoration-color: var(--complementary);
+}
+
+/* @supports: color-mix() */
+@supports(color: color-mix(in oklch, black, white)) {
+	un-nav[data-theme="haerer-geruestbau"] a {
+	 color: color-mix(in oklch, var(--primary) 100%, white);
+	}
+	un-nav[data-theme="haerer-geruestbau"][data-overlay="true"][data-broken="true"] li {
+		background-color: color-mix(in oklab, var(--complementary) 35%, white);
+	}
+	un-nav[data-theme="haerer-geruestbau"][data-overlay="true"][data-broken="true"] li.current-location {
+		background-color: color-mix(in oklab, var(--complementary) 0%, white);
+	}
+	un-nav[data-theme="haerer-geruestbau"] li:active {
+	 background-color: color-mix(in oklab, var(--complementary) 35%, white);
+	}
+	un-nav[data-theme="haerer-geruestbau"] li:active a {
+	 text-decoration-color: color-mix(in oklab, var(--complementary) 15%, white);
+	}
+}
+
+/* @media */
+/* --------------- */
+@media (hover: hover) {
+	un-nav[data-theme="haerer-geruestbau"] li:hover::before {
+		/* decorative line */
+		content: '';
+		display: block;
+		position: absolute;
+		top: 100%;
+		left: 0px;
+		border-bottom: thin solid black;
+		width: calc(100% + 31px);
+  }
+	un-nav[data-theme="haerer-geruestbau"] li:hover {
+		background-color: white;
+		background-color: color-mix(in oklch, var(--complementary) 0%, white);
+		outline: thin solid black;
+		outline-offset: 0px;
+		text-decoration-line: none;
+  }
+	un-nav[data-theme="haerer-geruestbau"][data-overlay="true"][data-broken="true"] li:hover {
+		background-color: whitesmoke;
+		background-color: color-mix(in oklab, var(--complementary) 0%, white);
+		outline: thin solid black;
+		outline-offset: 0px;
+  }
+}
+
+@media (min-width: 640px) {
+	un-nav[data-theme="haerer-geruestbau"][data-overlay="true"][data-broken="true"] .content {
+		top: 82%;
+	}
+}
+@media (min-width: 1024px) {
+	un-nav[data-theme="haerer-geruestbau"] .content {
+		flex-direction: column;
+		align-items: end;
+		text-align: right;
+		flex-wrap: nowrap;
+		row-gap: 0.5rem;
+  }
+}

@@ -1,0 +1,96 @@
+un-rt {
+	display: block;
+	line-height: 25px;
+	position: relative;
+	/* for background positioning */
+	/*! margin: 50px; */
+	font-size: 1rem;
+}
+
+un-rt .underline {
+	text-decoration-line: underline;
+	text-decoration-style: solid;
+	text-decoration-thickness: 1px;
+}
+
+/* images */
+/* ------------------------- */
+un-rt img {
+	min-width: 200px;
+	max-width: 400px;
+	margin: clamp(15px, 5%, 25px);
+}
+
+/* headings */
+/* ------------------------- */
+un-rt :is(h1, h2, h3, h4):first-of-type {
+	margin-top: 0;
+}
+
+/* anchors */
+/* ------------------------- */
+un-rt a {
+	color: black;
+}
+un-rt a:hover {
+	color: var(--primary);
+}
+
+/* [data-text-align] */
+/* ------------------------- */
+un-rt[data-text-align="justify"] p {
+	text-align: justify;
+}
+
+un-rt[data-text-align="left"] :is(h1, h2, h3, h4, p) {
+	text-align: left;
+}
+
+un-rt[data-text-align="center"] :is(h1, h2, h3, h4, p) {
+	text-align: center;
+}
+
+un-rt[data-text-align="right"] :is(h1, h2, h3, h4, p) {
+	text-align: right;
+}
+
+/* [data-float-img] */
+/* ------------------------- */
+un-rt[data-float-img="left"] img {
+	float: left;
+}
+
+un-rt[data-float-img="right"] img {
+	float: right;
+}
+
+/* [data-bg-mask] */
+/* ------------------------- */
+un-rt[data-bg-mask="polygon"] .bg-polygon {
+	width: 130%;
+	height: 130%;
+	position: absolute;
+	top: -15%;
+	left: -15%;
+	z-index: -100;
+	clip-path: polygon(var(--xTopLeft) var(--yTopLeft), var(--xT1) var(--yT1), var(--xT2) var(--yT2), var(--xTopRight) var(--yTopRight), var(--xR1) var(--yR1), var(--xR2) var(--yR2), var(--xBottomRight) var(--yBottomRight),
+			var(--xB1) var(--yB1),
+			var(--xB2) var(--yB2),
+			var(--xBottomLeft) var(--yBottomLeft),
+			var(--xL1) var(--yL1),
+			var(--xL2) var(--yL2));
+	background-color: hsla(204.6, 33.9%, 22.5%, 0.66);
+	background-blend-mode: overlay;
+}
+
+un-rt[data-bg-mask="polygon"] .bg-polygon::before {
+	position: relative;
+	content: '';
+	clip-path: inherit;
+	display: block;
+	width: 99%;
+	height: 99%;
+	top: 1px;
+	background-color: color-mix(in oklab, var(--primary), white 60%);
+	left: 6px;
+}

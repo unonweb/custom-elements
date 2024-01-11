@@ -1,0 +1,103 @@
+un-lay-flex[data-theme="haerer-geruestbau"] {
+	--min-gap: 15px;
+	--gap: max(var(--data-gap), var(--min-gap));
+	--available-width: calc(100% - var(--gap));
+}
+
+un-lay-flex {
+	--min-gap: 15px;
+	/* --data-gap: set by js */
+	--gap: max(var(--data-gap), var(--min-gap));
+	--available-width: calc(100% - var(--gap));
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: var(--gap);
+	row-gap: var(--gap);
+}
+
+un-lay-flex .col {
+	display: flex;
+	flex-direction: column;
+	column-gap: var(--gap);
+	row-gap: var(--gap);
+	width: fit-content;
+	align-items: flex-start;
+	justify-content: left;
+}
+
+/* data-justify */
+/* -------------------- */
+un-lay-flex[data-justify='left'] {
+	justify-content: left;
+}
+un-lay-flex[data-justify='center'] {
+	justify-content: center;
+}
+un-lay-flex[data-justify='right'] {
+	justify-content: right;
+}
+un-lay-flex[data-justify='space-between'] {
+	justify-content: space-between;
+}
+un-lay-flex[data-justify='space-around'] {
+	justify-content: space-around;
+}
+
+/* [data-align] */
+/* -------------------- */
+un-lay-flex[data-align='start'] {
+	align-items: start;
+}
+un-lay-flex[data-align='center'] {
+	align-items: center;
+}
+un-lay-flex[data-align='baseline'] {
+	align-items: baseline;
+}
+un-lay-flex[data-align='end'] {
+	align-items: end;
+}
+
+/* @media */
+/* -------------------- */
+@media (min-width: 640px) {
+	un-lay-flex {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+@media (min-width: 1024px) {
+	un-lay-flex[data-layout="50_50"] .col {
+    width: calc(var(--available-width) - 50%);
+  }
+	un-lay-flex[data-layout="66_33"] .col.one {
+    width: calc(var(--available-width) - 33%);
+  }
+	un-lay-flex[data-layout="66_33"] .col.two {
+    width: calc(var(--available-width) - 66%);
+  }
+	un-lay-flex[data-layout="33_66"] .col.one {
+    width: calc(var(--available-width) - 66%);
+  }
+	un-lay-flex[data-layout="33_66"] .col.two {
+    width: calc(var(--available-width) - 33%);
+  }
+	un-lay-flex[data-layout="75_25"] .col.one {
+    width: calc(var(--available-width) - 25%);
+  }
+	un-lay-flex[data-layout="75_25"] .col.two {
+    width: calc(var(--available-width) - 75%);
+  }
+	un-lay-flex[data-layout="25_75"] .col.one {
+    width: calc(var(--available-width) - 75%);
+  }
+	un-lay-flex[data-layout="25_75"] .col.two {
+    width: calc(var(--available-width) - 25%);
+  }
+	un-lay-flex[data-layout="33_33_33"] .col {
+    width: calc(33% - var(--main-density));
+  }
+}

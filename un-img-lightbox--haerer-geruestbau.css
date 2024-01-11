@@ -1,0 +1,86 @@
+/* [data-theme="haerer-geruestbau"] */
+
+/* all buttons */
+/* ----------------- */
+un-img-lightbox[data-theme="haerer-geruestbau"] button {
+  --stroke-color: black;
+	--stroke-width: 2px;
+	-webkit-text-stroke-width: 0px;
+	-webkit-text-stroke-color: var(--stroke-color);
+	text-shadow: -1px 1px 2px var(--stroke-color),
+				  1px 1px 2px var(--stroke-color),
+				  1px -1px 0 var(--stroke-color),
+				  -1px -1px 0 var(--stroke-color);
+	color: var(--primary);
+	padding: 0;
+}
+
+un-img-lightbox[data-theme="haerer-geruestbau"] button:focus-visible {
+	outline: 2px solid white;
+	outline-offset: 1px;
+}
+un-img-lightbox[data-theme="haerer-geruestbau"] button:active {
+	color: whitesmoke;
+	-webkit-text-stroke-color: black;
+}
+
+/* close button */
+/* ----------------- */
+un-img-lightbox[data-theme="haerer-geruestbau"] button.close::after {
+	/*! content: '\2718'; */
+	/*! content: '\2715'; */
+	/*! content: '\2716'; */
+	/*! content: 'x'; */
+	content: "\d7";
+	
+}
+un-img-lightbox[data-theme="haerer-geruestbau"] button.close {
+	font-size: 4rem;
+	font-weight: 600;
+	top: -2%;
+	right: 2%;
+	
+}
+
+/* arrow buttons */
+/* ----------------- */
+un-img-lightbox[data-theme="haerer-geruestbau"] button.arrows.left::after {
+	content: '\2039';
+}
+un-img-lightbox[data-theme="haerer-geruestbau"] button.arrows.right::after {
+	content: '\203A';
+}
+un-img-lightbox[data-theme="haerer-geruestbau"] button.arrows {
+	font-size: 6rem;
+	font-weight: 700;
+}
+un-img-lightbox[data-theme="haerer-geruestbau"] button.arrows.left {
+	left: clamp(5px, 5%, 30px);
+}
+un-img-lightbox[data-theme="haerer-geruestbau"] button.arrows.right {
+	right: clamp(5px, 5%, 30px);
+}
+
+/* @media */
+/* ----------------- */
+@media (hover: hover) {
+	un-img-lightbox[data-theme="haerer-geruestbau"] button:hover {
+		scale: 1.1;
+		color: color-mix(in srgb, var(--color) 70%, black);
+		-webkit-text-stroke-color: color-mix(in srgb, var(--primary) 30%, white);
+		-webkit-text-stroke-width: 4px;
+  }
+}
+
+/* @supports color-mix */
+/* ----------------- */
+@supports(color: color-mix(in oklch, white, black)) {
+	un-img-lightbox[data-theme="haerer-geruestbau"] button:focus-visible {
+	 outline: 2px solid color-mix(in srgb, var(--primary) 70%, white);
+  }
+	un-img-lightbox[data-theme="haerer-geruestbau"] button:active {
+	 color: color-mix(in srgb, var(--primary) 50%, white);
+	-webkit-text-stroke-color: color-mix(in srgb, var(--primary) 70%, black);
+  }
+}
+

@@ -1,0 +1,13 @@
+un-map-leaflet {
+	display: block;
+	width: 100%;
+	z-index: 0;
+}
+
+un-map-leaflet[data-theme="haerer-geruestbau"] #map {
+	min-width: 250px;
+	max-width: 500px;
+	border: thin solid var(--primary);
+	overflow: hidden;
+	aspect-ratio: 1;
+}

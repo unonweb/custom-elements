@@ -1,0 +1,28 @@
+/* [data-theme="radjajuschka"] */
+/* ---------------------------------- */
+un-nav[data-theme="radjajuschka"] {
+	display: flex;
+	/*! margin-top: 1px; */
+	margin: auto;
+	row-gap: 2px;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+	margin-bottom: 9vh;
+	width: 75%;
+	column-gap: 75px;
+
+	transition: none;
+	border-bottom: 1px solid #000;
+	border-top: 1px solid #000;
+	
+}
+un-nav[data-theme="radjajuschka"].stuck {
+	/* is added when "position: sticky" */
+	/* don't put here properties that cause layout repaints */
+	/*! box-shadow: 1px 1px 3px black; */
+	/*! background-color: var(--primary); */
+	align-self: flex-end;
+	padding: 0px 0px;
+	backdrop-filter: blur(3px) saturate(80%);
+}

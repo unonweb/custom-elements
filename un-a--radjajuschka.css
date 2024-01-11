@@ -1,0 +1,38 @@
+/* [data-theme="radjajuschka"] */
+/* -------------------------------------- */
+un-a[data-theme="radjajuschka"] a {
+	/* display: flex;
+	flex-grow: 0;
+	flex-basis: 150px;
+	flex-shrink: 1;
+	flex-direction: column;
+	justify-content: center;
+	height: fit-content;
+	align-items: center;
+	z-index: 3;
+	*/
+	background-color: lightslategray;
+	color: lightseagreen;
+	background-color: color-mix(in oklab, var(--complementary), black 40%);
+	color: color-mix(in oklab, var(--complementary) 30%, white);
+
+	outline: 1px solid black;
+	outline-offset: -1px;
+	border-collapse: collapse;
+	border-radius: 3px;
+	box-shadow: 0px 0px 0px 0px black;
+	font-weight: normal;
+	padding: 12px 12px;
+	text-decoration-line: none;
+	text-transform: uppercase;
+	
+	transition-property: transform, box-shadow;
+	transition-delay: 0s;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;	
+}
+un-a[data-theme="radjajuschka"] a:hover {
+	transform: translateY(5px);
+	color: black;
+	box-shadow: 1px 1px 2px 0px black;
+}

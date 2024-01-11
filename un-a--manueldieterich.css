@@ -1,0 +1,28 @@
+/* [data-theme="manueldieterich"] */
+/* -------------------------------------- */
+un-a[data-theme="manueldieterich"] a {
+	/* overline-2 */
+	position: relative;
+	overflow: hidden;
+}
+un-a[data-theme="manueldieterich"] a:hover {
+	color: var(--primary);
+}
+un-a[data-theme~="manueldieterich"] a::before {
+	/* overline-2 */
+	content: '';
+	position: absolute;
+	left: -150%;
+	width: 130%;
+	top: 0px;
+	border-bottom: solid 1px #f00;
+	transition: all .3s ease-Out;
+}
+un-a[data-theme~="manueldieterich"] a:hover::before {
+	/* overline-2 */
+	left: 0%;
+	border-bottom: solid 1px black;
+}
+un-a[data-theme="manueldieterich"] a:active {
+    text-decoration: underline dotted black;
+}

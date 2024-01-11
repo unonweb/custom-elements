@@ -1,0 +1,13 @@
+/* [data-theme="manueldieterich"] */
+/* ------------------------- */
+un-rt[data-theme="manueldieterich"] em {
+	color: var(--primary);
+	background-color: color-mix(in oklab, var(--primary), white 90%);
+	border-radius: 5px;
+	padding-left: 6px;
+	padding-right: 6px
+}
+
+un-rt[data-theme="manueldieterich"] a:hover {
+	color: var(--primary);
+}

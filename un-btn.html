@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html data-theme="vaadin">
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Components Native Light</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="stylesheet" href="un-btn.css">
+	<link rel="stylesheet" href="un-btn--radjajuschka.css">
+	<link rel="stylesheet" href="un-btn--themes.css">
+	<link rel="stylesheet" href="../colors.css">
+	<script src="un-btn.js" type="module"></script>
+	<style>
+		body {
+			display: grid;
+			place-items: center center;
+			gap: 2rem;
+		}
+	</style>
+</head>
+
+<body>
+	<un-btn data-theme="vaadin-1" data-on="click" data-off="any">Click</un-btn>
+	<un-btn data-theme="vaadin-1" data-on="click" data-off="any" data-label="right">&#10095;</un-btn>
+	<un-btn data-theme="vaadin-1" data-on="click" data-off="any">vaadin-1</un-btn>
+	<un-btn data-theme="vaadin-2">vaadin-2</un-btn>
+	<un-btn data-theme="vaadin-3">vaadin-3</un-btn>
+	<un-btn data-theme="triplebar" data-html="triplebar" data-label="menu"></un-btn>
+	<un-btn data-theme="triplebar-suedstadtsause" data-html="triplebar" data-label="menu"></un-btn>
+	<un-btn data-theme="triplebar-vaadin" data-html="triplebar" data-label="menu"></un-btn>
+	<un-btn data-theme="swipe"><span>swipe me</span></un-btn>
+	
+	<un-btn data-theme="">
+		<svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+	</un-btn>
+</body>
+
+</html>

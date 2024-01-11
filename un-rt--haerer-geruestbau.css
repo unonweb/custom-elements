@@ -1,0 +1,21 @@
+un-rt[data-theme="haerer-geruestbau"] h1 {
+	line-height: normal;
+	width: fit-content;
+	position: relative;
+}
+
+un-rt[data-theme="haerer-geruestbau"] h1::after {
+	/* "0% 0%"     left/top */
+	/* "100% 100%" bottom right corners */
+	content: '';
+	position: absolute;
+	width: 116%;
+	height: 110%;
+	left: -8%;
+	top: -5%;
+	clip-path: polygon(2.35% -21.14%, 94.62% -47.76%, 101.46% 149.02%, 4.36% 109.09%);
+	background: var(--primary-transper);
+	z-index: -1;
+	outline: none;
+	/*! border-bottom: 2px solid black; */
+}

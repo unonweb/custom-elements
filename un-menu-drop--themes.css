@@ -1,0 +1,35 @@
+/* [data-theme=""] */
+un-menu-drop[data-theme=""] {
+	column-gap: 8px;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	row-gap: 20px;
+}
+un-menu-drop[data-theme=""].stuck {
+	/* is added when "position: sticky" */
+	box-shadow: 1px 1px 3px black;
+}
+
+/* [data-theme="manueldieterich"] */
+un-menu-drop[data-theme="manueldieterich"] {
+	border-bottom: thin solid black;
+}
+
+/* [data-theme="radjajuschka"] */
+un-menu-drop[data-theme="radjajuschka"] {
+	position: sticky;
+	top: 0;
+	row-gap: 2px;
+	margin-bottom: 9vh;
+	column-gap: 75px;
+	transition: none;
+}
+/* [data-theme="radjajuschka"] */
+un-menu-drop[data-theme="radjajuschka"] .content * {
+	width: fit-content;
+}
+un-menu-drop[data-theme="radjajuschka"].stuck {
+	/* is added when "position: sticky" */
+	margin: 0;
+	padding: 0px 0px;
+}

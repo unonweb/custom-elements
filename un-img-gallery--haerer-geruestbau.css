@@ -1,0 +1,20 @@
+/* [data-theme="haerer-geruestbau"] */
+un-img-gallery[data-theme="haerer-geruestbau"] {
+	padding-left: 40px;
+}
+un-img-gallery[data-theme="haerer-geruestbau"] > img.current {
+	opacity: 1 !important;
+}
+un-img-gallery[data-theme="haerer-geruestbau"] > img {
+	opacity: 0.6;
+	outline-width: 1px;
+	outline-style: solid;
+	outline-color: var(--primary-transp);
+	border: none;
+}
+un-img-gallery[data-theme="haerer-geruestbau"][data-hover*="outline"] > img:hover {
+	outline-color: color-mix(in oklch, var(--primary) 75%, transparent);
+	outline-color: black;
+	outline-width: 1px;
+	opacity: 0.9;
+}

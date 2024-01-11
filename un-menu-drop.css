@@ -1,0 +1,114 @@
+un-menu-drop {
+	display: flex;
+	flex-direction: column;	/* mobile first */
+}
+
+un-menu-drop .content {
+	row-gap: 1px;
+	width: fit-content;
+	flex-direction: column;
+}
+
+/* [data-state] */
+un-menu-drop[data-state="off"] .content {
+	display: none;
+}
+un-menu-drop[data-state="on"] .content {
+	display: flex;
+}
+
+/* [data-smartstuck] */
+un-menu-drop[data-smartstuck].scroll-up,
+un-menu-drop[data-smartstuck]:focus-within {
+	transform: translateY(0%);
+}
+un-menu-drop[data-smartstuck].scroll-down {
+	transform: translateY(-100%);
+}
+
+/* [data-overlay="true"] */
+un-menu-drop[data-overlay="true"] {
+	display: flex;
+	position: relative;
+	width: fit-content;
+}
+un-menu-drop[data-overlay="true"] .content {
+	position: absolute;
+	top: 100%;
+}
+
+/* [data-justify] */
+un-menu-drop[data-justify="left"] .content {
+	align-items: flex-start;
+	left: 0;
+}
+un-menu-drop[data-justify="center"] .content {
+	align-items: center;
+}
+un-menu-drop[data-justify="right"] .content {
+	align-items: flex-end;
+}
+
+/* [data-anim] */
+un-menu-drop[data-state="on"][data-anim="topdown"] .content * {
+  opacity: 0;
+}
+un-menu-drop[data-state="on"][data-anim="topdown"] .content *:nth-child(1) a {
+	animation-name: topToBottom;
+	animation-duration: 400ms;
+	animation-delay: -150ms;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+un-menu-drop[data-state="on"][data-anim="topdown"] .content *:nth-child(2) a {
+	animation-name: topToBottom;
+	animation-duration: 400ms;
+	animation-delay: 0ms;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+un-menu-drop[data-state="on"][data-anim="topdown"] .content *:nth-child(3) a {
+	animation-name: topToBottom;
+	animation-duration: 400ms;
+	animation-delay: 150ms;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+un-menu-drop[data-state="on"][data-anim="topdown"] .content *:nth-child(4) a {
+	animation-name: topToBottom;
+	animation-duration: 400ms;
+	animation-delay: 300ms;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+/* @media */
+@media (min-width: 600px) {
+	un-menu-drop {
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	
+	un-menu-drop[data-collapse] .content {
+		display: flex;
+	}
+	
+	un-menu-drop[data-collapse] .trigger {
+		display: none;
+	}
+
+}
+
+/* @keyframes */
+@keyframes topToBottom {
+	0% {
+		opacity: 0;
+		transform: rotateX(-90deg);
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateX(0deg);
+	}
+}

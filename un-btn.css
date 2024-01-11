@@ -1,0 +1,63 @@
+un-btn {
+	display: contents;
+}
+
+/* button */
+un-btn button {
+	width: fit-content;
+	text-align: center;
+	/* reset */
+	outline: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	background-color: transparent;
+	color: inherit;
+	font: inherit;
+}
+
+un-btn button > svg {
+	width: 25px;
+}
+
+un-btn button:focus-visible {
+	outline-offset: 1px;
+	outline-width: 2px;
+	outline-style: solid;
+	outline-color: color-mix(in srgb, var(--primary) 70%, white);
+}
+
+/* @keyframes */
+@keyframes wiggle {
+
+	0%,
+	7% {
+		transform: rotateZ(0);
+	}
+
+	15% {
+		transform: rotateZ(-15deg);
+	}
+
+	20% {
+		transform: rotateZ(10deg);
+	}
+
+	25% {
+		transform: rotateZ(-10deg);
+	}
+
+	30% {
+		transform: rotateZ(6deg);
+	}
+
+	35% {
+		transform: rotateZ(-4deg);
+	}
+
+	40%,
+	100% {
+		transform: rotateZ(0);
+	}
+}

@@ -1,0 +1,12 @@
+un-btn[data-theme="haerer-geruestbau"][data-html="triplebar"] .bar {
+	outline-color: white;
+	outline-offset: 0px;
+	outline-width: 2px;
+	outline-style: solid;
+	background-color: var(--primary);
+	border-radius: 25px;
+	box-shadow: 0px 0px 0px 0px white;
+	height: 4px;
+	transition-duration: 200ms;
+	transition-timing-function: cubic-bezier(.13, .24, .35, 1.64);
+}

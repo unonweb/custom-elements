@@ -66,6 +66,20 @@ un-img[data-shape="oval"] img {
 	border-radius: 50%;
 }
 
+/* [data-shape="polygon"] */
+un-img[data-shape="polygon"] {
+	display: block;
+	border: none;
+}
+un-img[data-theme][data-shape="polygon"] {
+	background-color: var(--primary-transp);
+	clip-path: polygon(2.06% 5.92%, 99.46% 1.75%, 101% 100%, 9.11% 72.92%);
+}
+un-img[data-theme][data-shape="polygon"] img {
+	filter: sepia(50%) !important;
+	clip-path: polygon(5.06% 7.92%, 96.46% 3.75%, 100% 100%, 10.11% 72.92%);
+}
+
 /* [data-filter] */
 /* ------------------ */
 un-img[data-filter="sepia"] img {
@@ -120,20 +134,6 @@ un-img[data-mask="spotlight"]::before {
 	clip-path: circle(var(--circle-size) at 30% 40%);
 	animation: spotlight 20s infinite;
 	/*! animation-delay: 0.1s; */
-}
-
-/* [data-mask="polygon"] */
-un-img[data-mask="polygon"] {
-	display: block;
-	border: none;
-}
-un-img[data-theme][data-mask="polygon"] {
-	background-color: var(--primary-transp);
-	clip-path: polygon(2.06% 5.92%, 99.46% 1.75%, 101% 100%, 9.11% 72.92%);
-}
-un-img[data-theme][data-mask="polygon"] img {
-	filter: sepia(50%) !important;
-	clip-path: polygon(5.06% 7.92%, 96.46% 3.75%, 100% 100%, 10.11% 72.92%);
 }
 
 /* [data-float] */

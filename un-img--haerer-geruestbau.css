@@ -9,13 +9,12 @@ un-img[data-theme="haerer-geruestbau"] img {
 	outline-width: 1px;
 }
 
-/* [data-mask="polygon"] */
+/* [data-shape="polygon"] */
 
-un-img[data-theme="haerer-geruestbau"][data-mask="polygon"] {
+un-img[data-theme="haerer-geruestbau"][data-shape="polygon"] {
 	background-color: var(--primary-transp);
 	clip-path: polygon(2.06% 5.92%, 99.46% 1.75%, 101% 100%, 9.11% 72.92%);
 }
-un-img[data-theme="haerer-geruestbau"][data-mask="polygon"] img {
-	filter: sepia(50%) !important;
+un-img[data-theme="haerer-geruestbau"][data-shape="polygon"] img {
 	clip-path: polygon(5.06% 7.92%, 96.46% 3.75%, 100% 100%, 10.11% 72.92%);
 }

@@ -1,0 +1,6 @@
+un-lay-flex[data-theme="haerer-geruestbau"] .col {
+	outline-color: var(--primary-transp);
+	outline-style: solid;
+	outline-width: 1px;
+	outline-offset: 5px;
+}

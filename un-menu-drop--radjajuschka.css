@@ -1,0 +1,17 @@
+/* [data-theme="radjajuschka"] */
+un-menu-drop[data-theme="radjajuschka"] {
+	position: sticky;
+	top: 0;
+	row-gap: 2px;
+	margin-bottom: 9vh;
+	column-gap: 75px;
+	transition: none;
+}
+un-menu-drop[data-theme="radjajuschka"] .content * {
+	width: fit-content;
+}
+un-menu-drop[data-theme="radjajuschka"].stuck {
+	/* is added when "position: sticky" */
+	margin: 0;
+	padding: 0px 0px;
+}

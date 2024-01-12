@@ -10,6 +10,7 @@ un-menu-drop .content {
 }
 
 /* [data-state] */
+/* ---------------------------- */
 un-menu-drop[data-state="off"] .content {
 	display: none;
 }
@@ -18,6 +19,7 @@ un-menu-drop[data-state="on"] .content {
 }
 
 /* [data-smartstuck] */
+/* ---------------------------- */
 un-menu-drop[data-smartstuck].scroll-up,
 un-menu-drop[data-smartstuck]:focus-within {
 	transform: translateY(0%);
@@ -27,6 +29,7 @@ un-menu-drop[data-smartstuck].scroll-down {
 }
 
 /* [data-overlay="true"] */
+/* ---------------------------- */
 un-menu-drop[data-overlay="true"] {
 	display: flex;
 	position: relative;
@@ -38,6 +41,7 @@ un-menu-drop[data-overlay="true"] .content {
 }
 
 /* [data-justify] */
+/* ---------------------------- */
 un-menu-drop[data-justify="left"] .content {
 	align-items: flex-start;
 	left: 0;
@@ -50,6 +54,7 @@ un-menu-drop[data-justify="right"] .content {
 }
 
 /* [data-anim] */
+/* ---------------------------- */
 un-menu-drop[data-state="on"][data-anim="topdown"] .content * {
   opacity: 0;
 }
@@ -82,7 +87,21 @@ un-menu-drop[data-state="on"][data-anim="topdown"] .content *:nth-child(4) a {
 	animation-fill-mode: forwards;
 }
 
+/* [data-theme=""] */
+/* ---------------------------- */
+un-menu-drop[data-theme=""] {
+	column-gap: 8px;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	row-gap: 20px;
+}
+un-menu-drop[data-theme=""].stuck {
+	/* is added when "position: sticky" */
+	box-shadow: 1px 1px 3px black;
+}
+
 /* @media */
+/* ---------------------------- */
 @media (min-width: 600px) {
 	un-menu-drop {
 		flex-direction: row;

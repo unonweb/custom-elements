@@ -1,9 +1,3 @@
-un-lay-flex[data-theme="haerer-geruestbau"] {
-	--min-gap: 15px;
-	--gap: max(var(--data-gap), var(--min-gap));
-	--available-width: calc(100% - var(--gap));
-}
-
 un-lay-flex {
 	--min-gap: 15px;
 	/* --data-gap: set by js */

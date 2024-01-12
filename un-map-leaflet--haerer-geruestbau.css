@@ -1,0 +1,11 @@
+un-map-leaflet[data-theme="haerer-geruestbau"] #map {
+	min-width: 250px;
+	max-width: 500px;
+	border-radius: 1%;
+	outline-color: var(--primary-transp);
+	outline-style: solid;
+	outline-width: 1px;
+	outline-offset: 5px;
+	overflow: hidden;
+	aspect-ratio: 1;
+}

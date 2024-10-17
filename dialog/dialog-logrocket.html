@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>dialog (logrocket)</title>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/dialog.logrocket.css'>
+	<script src='themes/dialog.logrocket.js' type='module'></script>
+</head>
+
+<body>
+	<div class="container">
+
+		<p id="intro">A demo to demonstrate the &lt;dialog&gt; element and the dialog API. Use the following buttons to open the dialog as modal or non-modal.</p>
+
+		<button id="modal-open-btn">Modal</button>
+		<button id="non-modal-open-btn">Non-modal</button>
+
+		<dialog id="modal">
+			<p>Hello! I'm a modal dialog.</p>
+			<p>Type in the textbox, and save to see it in console. Use Close to ignore changes or press escape to cancel.</p>
+
+			<input class="text-input" type="text" id="modal-data" placeholder="Type something..." />
+			<div class="btn-group">
+				<button id="modal-save-btn">Save</button>
+				<button id="modal-close-btn">Close</button>
+			</div>
+		</dialog>
+
+		<dialog id="non-modal">
+			<p>Hi! I'm a non-modal dialog.</p>
+			<p>Type in the textbox, and save to see it in console. Use Close to ignore changes.</p>
+			<input class="text-input" type="text" id="non-modal-data" placeholder="Type something..." />
+			<div class="btn-group">
+				<button id="non-modal-save-btn">Save</button>
+				<button id="non-modal-close-btn">Close</button>
+			</div>
+		</dialog>
+
+	</div>
+</body>
+
+</html>

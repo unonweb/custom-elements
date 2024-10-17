@@ -1,0 +1,93 @@
+@layer default {
+
+	ce-article[data-theme="hg-1"] {
+		--color-border: var(--primary);
+		--color-icon: var(--complementary);
+	}
+
+	ce-article[data-theme="md-1"] {
+		--color-border: var(--primary);
+		--color-icon: var(--secondary);
+	}
+
+    ce-article {
+        --_color-border: var(--color-border, lightblue);
+        --_color-icon: var(--color-icon, lightsalmon);
+    }
+    
+    ce-article .collapse-trigger {
+        cursor: pointer;
+        border-bottom: thin solid var(--_color-border);
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        column-gap: 20px;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        font-size: 1.5rem;
+    }
+
+    ce-article[data-collapse] .collapse-trigger::after {
+        content: '\25B2';
+        display: inline-block;
+        font-size: large;
+        position: relative;
+        bottom: 0px;
+        rotate: 180deg;
+        color: var(--_color-icon);
+        transition-property: rotate;
+        transition-duration: 0.3s;
+    }
+
+    ce-article .collapse-trigger[data-state="collapsed"]::after {
+        rotate: 0deg;
+    }
+
+    /* collapsed */
+    ce-article .collapsed {
+        animation-name: fade-out;
+        animation-duration: 150ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+    ce-article .expanded {
+        animation-name: fade-in;
+        animation-duration: 550ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+    @keyframes fade-in {
+        0% {
+            position: static;
+            visibility: visible;
+            opacity: 0;
+            max-height: 0%
+        }
+
+        100% {
+            opacity: 1;
+            max-height: 100%
+        }
+    }
+
+    @keyframes fade-out {
+        0% {
+            opacity: 1;
+            max-height: 100%
+        }
+
+        50% {
+            opacity: 0;
+            max-height: 0%
+        }
+
+        100% {
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            max-height: 0%
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@layer themes {
+
+    button[data-theme="swipe"] {
+        --_color-primary: var(--primary, lightseagreen);
+        --_color-after: color-mix(in oklab, var(--_color-primary), white 80%);
+        --_color-hover: color-mix(in oklab, var(--primary), black 30%);
+        --_color-font: var(--_color-primary);
+        --_color-active-after: color-mix(in oklab, var(--_color-primary), white 90%);
+        display: block;
+        width: auto;
+        height: auto;
+        position: relative;
+        transition: all 0.35s;
+        padding: 5px 10px;
+        border: 1px solid var(--primary);
+        background-color: transparent;
+        /* font */
+        font-size: medium;
+        font-family: sans-serif;
+        text-decoration: none;
+        letter-spacing: 2px;
+        text-align: center;
+        color: var(--_color-font);
+    }
+
+    button[data-theme="swipe"] span.label {
+        position: relative;
+        z-index: 2;
+    }
+
+    button[data-theme="swipe"]:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: var(--_color-after);
+        transition: all 0.35s;
+    }
+
+    button[data-theme="swipe"]:hover {
+        color: var(--_color-hover);
+    }
+
+    button[data-theme="swipe"]:hover:after {
+        width: 100%;
+    }
+
+    button[data-theme="swipe"]:active:after {
+        background-color: var(--_color-active-after);
+    }
+}

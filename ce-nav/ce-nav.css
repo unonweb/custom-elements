@@ -1,0 +1,71 @@
+@layer default {
+
+	ce-nav {
+		--_color-hover: var(--color-hover, #e28282);
+		--_color-active: var(--complementary-white-60);
+		--_color-borders: var(--color-borders, lightcoral);
+		--_borders-offset: 5px;
+		--_color-back: var(--color-back, antiquewhite);
+		/* dont' change dimensions because they need to fill the grid */
+        width: 100%;
+        height: fit-content;
+        min-width: min-content;
+        /* layout for trigger + content */
+        display: flex;
+        flex-direction: column;
+    }
+    
+	ce-nav > div.content {
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        display: flex;
+        margin: 1rem;
+        padding: 0;
+        width: fit-content;
+    }
+
+	 ce-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: max-content;
+        z-index: 1;
+    }
+
+    ce-nav > .content > li {
+        padding: 0.2rem;
+    }
+
+    ce-nav > .content a.current {
+        font-weight: bold;
+    }
+
+	.scrolledTo {
+		color: var(--primary, lightblue)
+	}
+	
+	ce-nav[data-dropdown="maybe"] > drop-down {
+        display: flex;
+        flex-direction: column;
+    }
+
+    ce-nav[data-dropdown="maybe"] > .content {
+        display: none;
+    }
+
+    @media (min-width: 1024px) {
+        ce-nav[data-dropdown="maybe"] > drop-down {
+            display: none;
+        }
+
+        ce-nav[data-dropdown="maybe"] > .content {
+            display: block;
+        }
+    }
+}
+
+@layer attributes {
+
+    
+}

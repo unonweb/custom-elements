@@ -1,0 +1,30 @@
+@layer custom {
+    img-gallery[data-theme="hg-1"] {
+        --img-size: 120px;
+        --img-aspect-ratio: 1;
+        --justify-content: flex-start;
+        --margin: 0.5rem;
+        /* padding-left: 40px; */
+    }
+
+    img-gallery[data-theme="hg-1"] > img.current {
+        opacity: 1 !important;
+    }
+
+    img-gallery[data-theme="hg-1"] > img {
+        opacity: 0.6;
+        outline: 1px solid var(--complementary);
+        outline-offset: var(--borders-offset);
+    }
+
+    img-gallery[data-theme="hg-1"] > img:hover {
+        outline-color: var(--primary);
+        outline-width: 2px;
+        opacity: 1;
+    }
+
+    img-gallery[data-theme="hg-1"] {
+        /* column-gap: calc(var(--gap) / 2); */
+        /* row-gap: calc(var(--gap) / 2); */
+    }
+}

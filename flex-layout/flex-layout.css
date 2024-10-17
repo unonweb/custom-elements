@@ -1,0 +1,20 @@
+@layer default {
+    flex-layout {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--gap);
+        align-items: var(--align-items, start);
+        /* mobile < 640px */
+        width: 100%;
+        justify-content: var(--justify-content, space-between);
+    }
+
+    flex-layout flex-item {
+        width: calc(var(--width) - var(--gap));
+        display: flex;
+        flex-direction: column;
+        min-width: var(--min-width, 175px);
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,8 @@
+/* [data-theme="triplebar-suedstadtsause"] */
+un-btn[data-theme="triplebar-suedstadt"][data-state="off"] button {
+	animation-name: wiggle;
+	animation-duration: 1.3s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-delay: 0s;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>lang-switch</title>
+	<!-- this -->
+	<link rel='stylesheet' type='text/css' media='screen' href='lang-switch.css'>
+	<script src='lang-switch.js' type='module'></script>
+	<!-- else -->
+	<link rel='stylesheet' type='text/css' media='screen' href='../drop-down/drop-down.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../button/button.css'>
+</head>
+<body>
+	<lang-switch>
+		<drop-down data-off="any" data-on="click">
+			<button data-html="svg" data-svg="globebubble" data-insert="beforeend">Choose Language</button>
+			<ul class="drop-content" role="menu">
+				<li><button value="de">Deutsch</button></li>
+				<li><button value="en">English</button></li>
+			</ul>
+		</drop-down>
+	</lang-switch>
+</body>
+</html>

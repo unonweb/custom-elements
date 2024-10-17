@@ -1,0 +1,61 @@
+@layer default {
+    lang-switch {
+        display: block;
+        position: relative;
+        font-family: inherit;
+        cursor: pointer;
+        height: fit-content;
+        margin: 0px 10px;
+    }
+
+    /* list */
+    /* ---------------- */
+    lang-switch > ul {
+        /* position: absolute; */
+        flex-direction: column;
+        flex-wrap: wrap;
+        z-index: 3;
+        background-color: white;
+        border: thin solid var(--grey-light);
+        border-left: none;
+        list-style-type: none;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0;
+        top: 39px;
+    }
+
+    /* liste-item button */
+    /* ---------------- */
+    lang-switch > ul button {
+        all: unset;
+        padding: 5px 10px 5px 5px;
+    }
+
+    lang-switch > ul button:active {
+        text-decoration: underline dotted black;
+    }
+
+    lang-switch > ul button.current-lang {
+        color: hsl(50.3, 76.9%, 20.4%);
+    }
+
+    @media (any-hover: hover) {
+        lang-switch > ul button:hover {
+            color: var(--primary);
+            text-decoration: underline solid black;
+        }
+    }
+
+    /* button */
+    lang-switch > button svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    @media (any-hover: hover) {
+        lang-switch > button svg:hover {
+            fill: var(--primary, darkblue);
+        }
+    }
+}

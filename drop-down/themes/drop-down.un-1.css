@@ -1,0 +1,36 @@
+@layer themes {
+    drop-down[data-theme="un-1"] {
+        --_color-back: var(--primary, slateblue);
+        --_color-hover: var(--primary-black-25, darkslateblue);
+        max-width: 13em;
+        width: auto;
+        height: fit-content;
+        color: white;
+    }
+
+    drop-down[data-theme="un-1"] > .content {
+        width: 100%;
+        left: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    drop-down[data-theme="un-1"] > .content li {
+        background: var(--_color-back);
+        border-radius: 0.5em;
+        margin-bottom: 2px;
+        width: max-content;
+    }
+
+    drop-down[data-theme="un-1"] > .content li:hover {
+        background: var(--_color-hover);
+    }
+
+    drop-down[data-theme="un-1"] > .content li > :is(a, un-button) {
+        display: block;
+        padding: 0.7em 0.5em;
+        color: inherit;
+        margin: 0.1em 0;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,141 @@
+@layer default {
+    [toggle-state] {
+        --_color-background: var(--background, white);
+        display: block;
+        overflow-x: visible;
+        position: relative;
+        width: fit-content;
+		display: flex;
+        flex-direction: column;
+    }
+    
+    [sticky][toggle-state] {
+        position: sticky;
+    }
+    
+    [toggle-state] ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: max-content;
+        z-index: 1;
+    }
+
+    [toggle-state] > button .icon {
+        display: inline-block;
+        transition: transform ease-in-out 0.3s;
+    }
+    /* [toggle-overlay="true"] */
+    .toggle-dest.toggle-overlay {
+        position: absolute;
+        top: 100%;
+        background-color: var(--_color-background);
+    }
+
+    .toggle-dest.toggle-overlay.toggle-off {
+        visibility: hidden;
+    }
+
+    .toggle-dest.toggle-overlay.toggle-on {
+        visibility: visible;
+    }
+    
+    /* [toggle-overlay="false"] */
+    .toggle-dest {
+        position: static;
+    }
+
+    .toggle-dest.toggle-on {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .toggle-dest.toggle-off {
+        display: none; /* remove from layout if position is static */
+
+    }
+
+    /* remove from layout if position is static */
+    [toggle-state="on"] > button > .icon {
+        transform: rotate(180deg);
+    }
+
+	[toggle="false"] > button.toggle {
+        display: none;
+    }
+    [toggle="false"] .toggle-dest {
+        display: flex;
+    }
+
+    /* [toggle-anim="slide-rl"] */
+    [toggle-anim="slide-rl"] .toggle-dest {
+        --duration: 0.5s;
+        --delay: 2s;
+        transition-property: visibility;
+        transition-duration: calc(var(--duration) + 0.1s);
+        transition-timing-function: ease-in-out;
+    }
+
+    [toggle-anim="slide-rl"] .toggle-dest li {
+        transition-property: translate, opacity;
+        transition-duration: var(--duration);
+        transition-timing-function: ease-in-out;
+        transition-delay: calc(60ms * var(--delay)); /* defined on <li> */
+    }
+
+    [toggle-anim="slide-rl"] .toggle-dest.toggle-off li {
+        translate: 100%;
+        opacity: 0;
+    }
+
+    [toggle-anim="slide-rl"] .toggle-dest.toggle-on li {
+        translate: 0%;
+        opacity: 1;
+    }
+
+    /* [toggle-anim="softdrop"] */
+    [toggle-anim="softdrop"] .toggle-dest {
+        transition: translate ease 0.3s;
+    }
+
+    [toggle-anim="softdrop"] .toggle-dest.toggle-on {
+        translate: 0% 0%;
+    }
+
+    [toggle-anim="softdrop"] .toggle-dest.toggle-off {
+        translate: 0% -1em;
+    }
+
+    /* [toggle-anim="unfold"] */
+    /* does not work for nested s */
+    [toggle-anim="unfold"] .toggle-dest.toggle-off li {
+        opacity: 0;
+        animation-name: unfold;
+        animation-duration: 300ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: var(--delay);
+    }
+
+    @keyframes unfold {
+        0% {
+            opacity: 0;
+            transform: rotateX(-90deg);
+        }
+
+        100% {
+            opacity: 1;
+            transform: rotateX(0deg);
+        }
+    }
+}
+
+@layer themes {
+    [theme="md-1"] .toggle-dest.toggle-on {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}

@@ -1,0 +1,60 @@
+@layer themes {
+    nav[data-theme="md-1"] a {
+        background-color: transparent;
+        outline: none;
+        color: black;
+        text-decoration: none;
+        white-space: nowrap;
+        margin: 0px 10px;
+        line-height: 30px;
+        text-align: start;
+        position: relative;
+        overflow: clip;
+        /* hides the ::before element when not hovered */
+    }
+
+    nav[data-theme="md-1"] a::before {
+        /* decorative overline */
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: -5px;
+        border-bottom: solid 1px black;
+        transition: all 0.3s ease-Out;
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    /* a:hover */
+    @media (any-hover: hover) {
+        nav[data-theme="md-1"] a:hover {
+            color: var(--primary);
+        }
+
+        nav[data-theme="md-1"] a:hover::before {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
+	/* a:active */
+    nav[data-theme="md-1"] a:active {
+        color: var(--complementary);
+    }
+
+    nav[data-theme="md-1"] a:active::before {
+        border-color: var(--complementary);
+        border-bottom-style: dotted;
+    }
+
+	/* a.current */
+    nav[data-theme="md-1"] a.current {
+        color: var(--complementary);
+        font-weight: normal;
+    }
+
+    nav[data-theme="md-1"] a.current::before {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}

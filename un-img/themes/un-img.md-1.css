@@ -1,0 +1,16 @@
+@layer custom {
+    un-img[data-theme="md-1"] img {
+        outline: 1px solid #181616;
+        border-radius: 5px;
+    }
+
+    /* page: forschung */
+    un-img[data-theme="md-1"]#forschung-654e0afe915ed821b381f5e4 {
+        margin: auto;
+        object-position: 0px -79px;
+    }
+
+    un-img[data-theme="md-1"][data-page="653bb41a931572f3c62ede16"] {
+        /* forschung */ margin-top: 4%;
+    }
+}

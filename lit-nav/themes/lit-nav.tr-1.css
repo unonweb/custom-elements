@@ -1,0 +1,42 @@
+@layer themes {
+	lit-nav[theme="tr-1"] {
+		width: 100%;
+		margin: 2rem;
+		backdrop-filter: brightness(0.2);
+	}
+
+	lit-nav[theme="tr-1"] > div.content {
+		width: 100%;
+	}
+	
+	lit-nav[theme="tr-1"] > div.content > ul.default {
+		display: flex;
+		width: 100%;
+		flex-direction: row;
+		column-gap: 2rem;
+		justify-content: space-evenly;
+	}
+
+	lit-nav[theme="tr-1"] {
+		position: fixed;
+		top: 0;
+		left: 0;
+		transition-property: translate, opacity;
+		transition-duration: 0.4s;
+	}
+	
+	lit-nav[theme="tr-1"] a {
+		color: white;
+	}
+	
+	html[scrolling-down] lit-nav {
+        translate: 0 -100%;
+        opacity: 0;
+    }
+
+	html[scrolling-up] lit-nav, 
+	lit-nav:focus-within {
+		translate: 0 0%;
+        opacity: 1;
+    }
+}

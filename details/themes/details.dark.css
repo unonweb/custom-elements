@@ -1,0 +1,9 @@
+@layer themes {
+	details[data-theme="dark"] {
+		--_color-summary: #676464;
+		--_color-content: #3f3c3c;
+		--_color-icon: white;
+		--_color-font: white;
+		--_border-radius: 5px;
+	}
+}

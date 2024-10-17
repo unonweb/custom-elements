@@ -1,0 +1,44 @@
+@layer default {
+	
+    rich-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    rich-text p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    rich-text p:first-of-type {
+        margin-top: 0;
+    }
+        
+    rich-text p + p {
+        margin-top: 0rem
+    }
+
+    /* classes */
+    rich-text .underline {
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-thickness: 1px;
+    }
+
+    rich-text .align-left {
+        text-align: left;
+    }
+
+    rich-text .align-right {
+        text-align: right;
+    }
+
+    rich-text .align-justify {
+        text-align: justify;
+    }
+
+    rich-text .align-center {
+        text-align: center;
+    }
+
+}

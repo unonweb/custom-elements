@@ -1,0 +1,6 @@
+@layer themes {
+	img-gallery[theme="tr-1"] {
+		width: fit-content;
+		margin: auto;
+	}
+}

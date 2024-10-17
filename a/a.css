@@ -1,0 +1,37 @@
+@layer default {
+    a {
+        --_color-fill: var(--color-fill, #17a68f);
+        --_color-stroke: var(--color-stroke, #aa2626);
+        --_color-hover: var(--color-hover, #55a617);
+        display: inline-flex;
+    }
+
+    a[data-svg] {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+    }
+
+    a[data-svg] {
+        fill: var(--_color-fill);
+        /* stroke: var(--_color-stroke); */
+        /* stroke-width: 15px; */
+        /* stroke-linecap: round; */
+        /* stroke-linejoin: round; */
+    }
+
+    a[data-svg="bandcamp"] {
+        /* fill: var(--_color-fill); */
+        /* stroke: var(--_color-stroke); */
+        /* stroke-linecap: round; */
+        /* stroke-linejoin: round; */
+    }
+
+    @media (hover: hover) {
+        a[data-svg]:hover .outside,
+        a[data-svg]:hover .border {
+            fill: var(--_color-hover);
+            stroke: var(--_color-hover);
+        }
+    }
+}

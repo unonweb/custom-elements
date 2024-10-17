@@ -1,0 +1,39 @@
+/* 
+	Author: Ivan Grozdic 
+*/
+
+un-btn[data-theme="grozdic"] {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 2;
+    height: 50px;
+    transition: all 200ms linear;
+    border-radius: 4px;
+    width: 220px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    background-color: #ffeba7;
+    cursor: pointer;
+    color: #102770;
+    box-shadow: 0 12px 35px 0 rgba(255, 235, 167, 0.15);
+}
+
+un-btn[data-theme="grozdic"] span.arrow {
+    transition: transform;
+    transition-duration: 0.5s;
+    transform: rotate(-90deg);
+    
+    display: inline-block;
+    margin-left: 10px;
+}
+
+un-btn[data-theme="grozdic"][data-state="on"] span.arrow {
+    transform: rotate(90deg);
+    display: inline-block;
+}

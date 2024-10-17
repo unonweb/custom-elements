@@ -1,0 +1,41 @@
+@layer default {
+    social-media-icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    social-media-icons svg {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        fill: white;
+    }
+
+    social-media-icons svg.facebook {
+        fill: transparent;
+        stroke: white;
+        stroke-width: 15px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    social-media-icons a {
+	    display: inline-flex;
+	}
+
+    @media (hover: hover) {
+        social-media-icons
+            svg:is(.instagram, .youtube, .spotify, .bandcamp):hover {
+            fill: var(--secondary);
+        }
+        social-media-icons svg.mail:hover path.inside {
+            fill: var(--secondary);
+        }
+        social-media-icons svg.facebook:hover path {
+            stroke: var(--secondary);
+        }
+    }
+}

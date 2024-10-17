@@ -1,0 +1,80 @@
+@layer {
+    /* data-theme^='vaadin' 
+	----------------------------------- */
+    un-btn[data-theme^="vaadin"] {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    /* [data-theme='vaadin-1'] 
+	------------------------------- */
+    un-btn[data-theme="vaadin-1"] {
+        color: white;
+        font-size: medium;
+        font-weight: bold;
+
+        background-color: var(--primary);
+        transition-property: all;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.2s;
+    }
+
+    un-btn[data-theme="vaadin-1"]:hover {
+        background-color: color-mix(in srgb, var(--primary) 80%, black);
+    }
+
+    un-btn[data-theme="vaadin-1"]:active {
+        background-color: color-mix(in srgb, var(--primary) 80%, white);
+    }
+
+    un-btn[data-theme="vaadin-1"]:focus-visible {
+        outline: 2px solid color-mix(in srgb, var(--primary) 70%, white);
+        outline-offset: 1px;
+    }
+
+    /* [data-theme='vaadin-2'] 
+	---------------------------------- */
+    un-btn[data-theme="vaadin-2"] {
+        font-size: medium;
+        background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+        color: color-mix(in srgb, var(--primary) 96%, black);
+    }
+
+    un-btn[data-theme="vaadin-2"]:hover {
+        background-color: color-mix(in srgb, var(--primary) 30%, transparent);
+    }
+
+    un-btn[data-theme="vaadin-2"]:active {
+        background-color: color-mix(in srgb, var(--primary) 10%, white);
+    }
+
+    un-btn[data-theme="vaadin-2"]:focus-visible {
+        outline: 2px solid color-mix(in srgb, var(--primary) 70%, white);
+        outline-offset: 1px;
+    }
+
+    /* [data-theme='vaadin-3']
+	------------------------------ */
+    un-btn[data-theme="vaadin-3"] {
+        font-size: small;
+        background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+        color: color-mix(in srgb, var(--primary) 90%, white);
+    }
+
+    un-btn[data-theme="vaadin-3"]:hover {
+        background-color: color-mix(in srgb, var(--primary) 15%, transparent);
+    }
+
+    un-btn[data-theme="vaadin-3"]:active {
+        background-color: color-mix(in srgb, var(--primary) 0%, transparent);
+    }
+
+    un-btn[data-theme="vaadin-3"]:focus-visible {
+        outline: 2px solid color-mix(in srgb, var(--primary) 70%, white);
+        outline-offset: 1px;
+    }
+}

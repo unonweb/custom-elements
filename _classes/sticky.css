@@ -1,0 +1,42 @@
+@layer default {
+    [data-sticky] {
+        position: sticky;
+    }
+
+    [data-sticky="true"], [data-sticky="smart"] {
+        top: 1px;
+        z-index: 2;
+    }
+
+    [data-sticky].stuck {
+        /*box-shadow: 1px 1px 3px black;*/
+    }
+
+    [data-sticky="smart"] {
+        transition-property: opacity, translate;
+        transition-duration: 0.1s;
+        transition-timing-function: ease-in-out;
+    }
+
+    html[scrolling-up] [data-sticky="smart"], 
+    [data-sticky="smart"]:focus-within {
+        translate: 0 0%;
+        opacity: 1;
+    }
+
+    html[scrolling-down] [data-sticky="smart"].stuck {
+        translate: 0 -100%;
+        opacity: 0;
+    }
+
+	html[scrolling-down] [data-sticky="smart-reverse"].stuck {
+        translate: 0 0%;
+        opacity: 1;
+    }
+
+	html[scrolling-up] [data-sticky="smart-reverse"], 
+    [data-sticky="smart-reverse"]:focus-within {
+        translate: 0 -100%;
+        opacity: 0;
+    }
+}

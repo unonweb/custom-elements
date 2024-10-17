@@ -1,0 +1,26 @@
+@layer default {
+    ce-select {
+        --_color-background: #fffefe;
+        --_color-font: #000000;
+        --_color-border: #782d2d;
+        --_scroll-front: #160307;
+        --_scroll-back: #caaeb0;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+        min-width: fit-content;
+        min-height: auto;
+        position: relative;
+        row-gap: 5px;
+    }
+
+    ce-select label {
+        color: var(--_color-font);
+        /* font-size: 1rem; */
+        /* font-weight: normal; */
+    }
+
+	ce-select:has(> select[multiple]) {
+		width: min-content;
+	}
+}

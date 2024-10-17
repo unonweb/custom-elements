@@ -1,0 +1,135 @@
+@layer default {
+	drop-down {
+		--_color-background: var(--background, white);
+		display: block;
+		overflow-x: visible;
+		position: relative;
+		width: fit-content;
+	}
+
+	drop-down[data-overlay="true"] > .drop-content {
+		position: absolute;
+		top: 100%;
+		background-color: var(--_color-background);
+	}
+
+	drop-down[data-overlay="true"] > .drop-content.offset {
+		right: 100%;
+		margin-right: 40px;
+		top: 100%;
+	}
+	
+	drop-down[data-overlay="false"][data-state="on"] > .drop-content {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	drop-down[data-overlay="false"][data-state="on"] > .drop-content {
+		position: static;
+	}
+	
+	drop-down[data-overlay="false"][data-state="off"] > .drop-content {
+		position: absolute;
+	}
+
+	drop-down > .drop-content {
+		visibility: hidden;
+		list-style: none;
+		padding: 0;
+		margin-top: 0.5rem;
+		width: max-content;
+	}
+	
+	drop-down > un-button .icon {
+        display: inline-block;
+        transition: transform ease-in-out 0.3s;
+    }
+
+	drop-down > content li {
+		margin-bottom: 2px;
+	}
+
+	/* [data-state="on"] */
+    drop-down[data-state="on"] > .drop-content {
+        visibility: visible;
+    }
+
+	drop-down[data-state="on"] > un-button .icon {
+        transform: rotate(180deg);
+    }
+
+	 /* [data-anim="slide-rl"] */
+	 drop-down[data-anim="slide-rl"] > .drop-content {
+		--duration: 0.5s;
+		--delay: 2s;
+	 	transition-property: visibility;
+        transition-duration: calc(var(--duration) + 0.1s);
+        transition-timing-function: ease-in-out;
+	 }
+
+	 drop-down[data-anim="slide-rl"] > .drop-content li {
+        transition-property: translate, opacity;
+        transition-duration: var(--duration);
+        transition-timing-function: ease-in-out;
+        transition-delay: calc(60ms * var(--delay)); /* defined on <li> */
+    }
+
+    drop-down[data-state="off"][data-anim="slide-rl"] > .drop-content li {
+        translate: 100%;
+		opacity: 0;
+    }
+
+    drop-down[data-state="on"][data-anim="slide-rl"] > .drop-content li {
+        translate: 0%;
+		opacity: 1;
+    }
+
+    /* [data-anim="softdrop"] */
+    drop-down[data-anim="softdrop"] > .drop-content {
+        transition: translate ease 0.3s;
+    }
+
+    drop-down[data-state="on"][data-anim="softdrop"] > .drop-content {
+        translate: 0% 0%;
+    }
+
+    drop-down[data-state="off"][data-anim="softdrop"] > .drop-content {
+        translate: 0% -1em;
+        visibility: hidden;
+    }
+
+	/* [data-anim="unfold"] */
+	/* does not work for nested drop-downs */
+	drop-down[data-state="on"][data-anim="unfold"] > .drop-content li {
+        opacity: 0;
+        animation-name: unfold;
+        animation-duration: 300ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+		animation-delay: var(--delay);
+    }
+
+	@keyframes softdrop {
+		0% {
+			translate: 0% -1em;
+		}
+
+		100% {
+			translate: 0% 0%;
+		}
+	}
+
+	@keyframes unfold {
+        0% {
+            opacity: 0;
+            transform: rotateX(-90deg);
+        }
+
+        100% {
+            opacity: 1;
+            transform: rotateX(0deg);
+        }
+    }
+
+}

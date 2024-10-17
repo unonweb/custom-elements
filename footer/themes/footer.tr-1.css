@@ -1,0 +1,22 @@
+@layer themes {
+	body > footer[theme="tr-1"] {
+		position: fixed;
+		transition-property: translate, opacity;
+		transition-duration: 0.4s;
+		bottom: 0;
+		backdrop-filter: brightness(0.2);
+	    width: 100%;
+	    height: fit-content;
+	    padding: 6px;
+	}
+	html[scrolling-down] body > footer {
+        translate: 0 0%;
+        opacity: 1;
+    }
+
+	html[scrolling-up] body > footer, 
+	body > footer:focus-within {
+        translate: 0 100%;
+        opacity: 0;
+    }
+}

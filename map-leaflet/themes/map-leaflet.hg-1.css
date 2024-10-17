@@ -1,0 +1,23 @@
+map-leaflet[data-theme="hg-1"] {
+    --borders: var(--primary);
+    height: 100%;
+    width: 100%;
+    height: 400px;
+}
+
+map-leaflet[data-theme="hg-1"] #map {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    border-radius: 0%;
+    outline-color: var(--borders);
+    outline-style: solid;
+    outline-width: 1px;
+    outline-offset: 5px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    z-index: 0;
+    /* width: 400px; */
+    /* height: 400px; */
+    place-self: center;
+}

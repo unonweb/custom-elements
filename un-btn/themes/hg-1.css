@@ -1,0 +1,21 @@
+@layer custom {
+    un-btn[data-html="triplebar"] .bar {
+        outline-color: #000;
+        outline-offset: 0px;
+        outline-width: 1px;
+        outline-style: solid;
+        box-shadow: 0 0 2px 3px var(--primary);
+        background-color: var(--background);
+        border-radius: 8px;
+        height: 5px;
+        transition-duration: .2s;
+        transition-timing-function: cubic-bezier(.13,.24,.35,1.64)
+    }
+
+    un-btn[data-html="triplebar"][data-state="on"] .bar.two {
+        background-color: transparent;
+        outline-color: transparent;
+        box-shadow: none;
+        transform: translateX(-55px);
+    }
+}

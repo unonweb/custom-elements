@@ -1,0 +1,28 @@
+button[data-theme="office"] {
+	--_color-primary: var(--color-phrimary, #ce93a2);
+	--_color-background: color-mix(in srgb, var(--_color-primary) 10%, transparent);
+	--_color-font: color-mix(in srgb, var(--_color-primary) 30%, black);
+	--_color-hover: color-mix(in srgb, var(--_color-primary) 30%, transparent);
+	--_color-active: color-mix(in srgb, var(--_color-primary) 10%, white);
+	--_color-outline: color-mix(in srgb, var(--_color-primary) 30%, white);
+	background-color: var(--_color-primary);
+	padding: 4px 8px;
+	border-radius: 2px;
+	outline: thin solid var(--_color-outline);
+	font-size: medium;
+	background-color: var(--_color-background);
+	color: var(--_color-font);
+}
+
+button[data-theme="office"]:hover {
+	background-color: var(--_color-hover);
+}
+
+button[data-theme="office"]:active {
+	background-color: var(--_color-active);
+}
+
+button[data-theme="office"]:focus-visible {
+	outline: 2px solid var(--_color-outline);
+	outline-offset: 1px;
+}

@@ -1,0 +1,33 @@
+@layer custom {
+    un-img[data-theme="hg-1"] {
+        border: thin solid var(--primary);
+    }
+
+    un-img[data-theme="hg-1"] img {
+        /* min-width: 240px; */ outline: 1px solid var(--primary);
+        outline-offset: var(--borders-offset);
+    }
+
+    /* [data-shape="polygon"] */
+    un-img[data-theme="hg-1"][data-shape="polygon"] {
+        background-color: var(--primary);
+        clip-path: polygon(2.06% 5.92%, 99.46% 1.75%, 101% 100%, 9.11% 72.92%);
+    }
+
+    un-img[data-theme="hg-1"][data-shape="polygon"] img {
+        /* clip-path: polygon(5.06% 7.92%, 96.46% 3.75%, 100% 100%, 10.11% 72.92%); */ 
+    }
+
+    main un-img[data-theme="hg-1"] {
+        filter: sepia(50%);
+    }
+
+    header un-img[data-theme="hg-1"] {
+        filter: sepia(50%);
+    }
+
+    header un-img[data-theme="hg-1"] img {
+        height: 100% !important;
+        object-fit: cover;
+    }
+}

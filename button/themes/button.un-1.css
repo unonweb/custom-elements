@@ -1,0 +1,14 @@
+button[data-theme="un-1"] {
+	background: var(--_color-back);
+	font-size: medium;
+	font-weight: bold;
+	width: 100%;
+	border: none;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.7em 0.5em;
+	border-radius: 0.5em;
+	cursor: pointer;
+}

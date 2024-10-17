@@ -1,0 +1,121 @@
+@layer default {
+	lit-toggle {
+		--_color-background: var(--background, white);
+		display: block;
+		overflow-x: visible;
+		position: relative;
+		width: fit-content;
+	}
+
+	lit-toggle[overlay="true"] > .content {
+		position: absolute;
+		top: 100%;
+		background-color: var(--_color-background);
+	}
+
+	lit-toggle[overlay="true"] > .content.offset {
+		position: absolute;
+		right: 100%;
+		margin-right: 40px;
+		top: 100%;
+	}
+	
+	lit-toggle[overlay="false"][state="on"] > .content {
+		position: static;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	lit-toggle[overlay="false"][state="off"] > .content {
+		display: none;
+	}
+
+	lit-toggle > .content {
+		visibility: hidden;
+		list-style: none;
+		padding: 0;
+		margin-top: 0.5rem;
+		width: max-content;
+	}
+	
+	lit-toggle > un-button .icon {
+        display: inline-block;
+        transition: transform ease-in-out 0.3s;
+    }
+
+	lit-toggle > content li {
+		margin-bottom: 2px;
+	}
+
+	/* [state="on"] */
+    lit-toggle[state="on"] > .content {
+        visibility: visible;
+    }
+
+	lit-toggle[state="on"] > un-button .icon {
+        transform: rotate(180deg);
+    }
+
+	 /* [anim="slide-rl"] */
+	 lit-toggle[anim="slide-rl"] > .content {
+		--duration: 0.5s;
+		--delay: 2s;
+	 	transition-property: visibility;
+        transition-duration: calc(var(--duration) + 0.1s);
+        transition-timing-function: ease-in-out;
+	 }
+
+	 lit-toggle[anim="slide-rl"] > .content li {
+        transition-property: translate, opacity;
+        transition-duration: var(--duration);
+        transition-timing-function: ease-in-out;
+        transition-delay: calc(60ms * var(--delay)); /* defined on <li> */
+    }
+
+    lit-toggle[state="off"][anim="slide-rl"] > .content li {
+        translate: 100%;
+		opacity: 0;
+    }
+
+    lit-toggle[state="on"][anim="slide-rl"] > .content li {
+        translate: 0%;
+		opacity: 1;
+    }
+
+    /* [anim="softdrop"] */
+    lit-toggle[anim="softdrop"] > .content {
+        transition: translate ease 0.3s;
+    }
+
+    lit-toggle[state="on"][anim="softdrop"] > .content {
+        translate: 0% 0%;
+    }
+
+    lit-toggle[state="off"][anim="softdrop"] > .content {
+        translate: 0% -1em;
+    }
+
+	/* [anim="unfold"] */
+	/* does not work for nested drop-downs */
+	lit-toggle[state="on"][anim="unfold"] > .content li {
+        opacity: 0;
+        animation-name: unfold;
+        animation-duration: 300ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+		animation-delay: var(--delay);
+    }
+
+	@keyframes unfold {
+        0% {
+            opacity: 0;
+            transform: rotateX(-90deg);
+        }
+
+        100% {
+            opacity: 1;
+            transform: rotateX(0deg);
+        }
+    }
+
+}

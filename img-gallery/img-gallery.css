@@ -1,0 +1,166 @@
+@layer default {
+    img-gallery {
+        --_margin: var(--margin, 0.5rem);
+        --_gap: var(--gap, 0); /* can't align first item with gap */
+        --_color-focus: var(--primary, #66716c);
+        --_justify-content: var(--justify-content, flex-start); /* only for flex-columns */
+        --_aspect-ratio: var(--img-aspect-ratio, 1.2);
+        --_img-size: var(--img-size, 300px); /* pixel or viewport */
+        height: 100%;
+        width: 100%;
+        display: block;
+        /* gap: var(--_gap); */
+    }
+
+    img-gallery > img {
+        margin: var(--_margin);
+        min-width: 180px;
+        /*! opacity: 0.4; */
+        transition: transform ease 0.25s;
+        outline: thin solid black;
+    }
+
+    img-gallery[data-layout="flex-grow"] {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: var(--_justify-content);
+    }
+
+    img-gallery[data-layout="flex-grow"] > img {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: var(--_aspect-ratio);
+        vertical-align: middle;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: var(--_img-size);
+        object-fit: cover;
+    }
+
+    /* [data-layout="flex-columns"] */
+
+    img-gallery[data-layout="flex-columns"] {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: var(--_justify-content);
+    }
+
+    img-gallery[data-layout="flex-columns"] > img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+        aspect-ratio: var(--_aspect-ratio);
+        object-fit: cover;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: var(--_img-size);
+    }
+
+    /* [data-layout="flex-masonry"] */
+    
+    img-gallery[data-layout="flex-masonry"] {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    img-gallery[data-layout="flex-masonry"]::after {
+        display: none;
+        content: "";
+        flex-basis: var(--_img-size);
+        flex-grow: 999;
+    }
+    
+    img-gallery[data-layout="flex-masonry"] > img {
+        height: var(--_img-size);
+        width: auto;
+        vertical-align: middle;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+        object-fit: cover;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    img-gallery a {
+        display: flex;
+        width: fit-content;
+    }
+    
+    img-gallery[data-onclick] > img {
+        cursor: pointer;
+    }
+
+    /* [data-theme=""] */
+    /* -------------------- */
+    img-gallery[data-theme=""] > img.current {
+        opacity: 1 !important;
+    }
+
+    img-gallery[data-theme=""] > img {
+        opacity: 0.6;
+    }
+
+    img-gallery[data-theme=""] > img:focus-visible {
+        outline-color: var(--_color-focus);
+        outline-width: 4px;
+        outline-offset: 2px;
+    }
+}
+
+@layer attributes {
+
+    /* [data-shape] */
+    /* -------------------- */
+    img-gallery[data-shape="rounded"] > img {
+        border-radius: var(--border-radius, 3%);
+    }
+
+    img-gallery[data-shape="circle"] > img {
+        border-radius: 50%;
+        aspect-ratio: 1;
+    }
+
+    img-gallery[data-shape="rectangle"] > img {
+        border-radius: 0%;
+    }
+
+    /* [data-filter] */
+    /* -------------------- */
+    img-gallery[data-filter="sepia"] > img {
+        filter: sepia(50%);
+    }
+
+    img-gallery[data-filter="grey"] > img {
+        filter: grayscale(70%);
+    }
+
+    img-gallery[data-filter="shadow"] > img {
+        filter: drop-shadow(5px 5px 5px #4f4f4f);
+    }
+
+    /* [data-hover] */
+    /* -------------------- */
+    img-gallery[data-hover*="scale"] > img:hover {
+        transform: scale(1.05);
+    }
+
+    img-gallery[data-hover*="lighten"] > img:hover {
+        filter: brightness(140%);
+    }
+
+    img-gallery[data-hover*="outline"] > img:hover {
+        outline-width: 2px;
+        outline-style: solid;
+        outline-color: var(--primary);
+        border: none;
+        opacity: 0.9;
+    }
+
+    img-gallery[data-hover*="shadow"] > img:hover {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px 4px;
+    }
+}

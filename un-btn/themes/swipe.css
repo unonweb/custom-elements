@@ -1,0 +1,47 @@
+@layer default {
+
+    un-btn[data-theme="swipe"] {
+        display: block;
+        width: auto;
+        height: auto;
+        position: relative;
+        transition: all 0.35s;
+        padding: 5px 10px;
+        border: 1px solid var(--primary);
+        /* font */
+        font-size: medium;
+        font-family: sans-serif;
+        text-decoration: none;
+        letter-spacing: 2px;
+        text-align: center;
+        color: var(--primary);
+    }
+
+    un-btn[data-theme="swipe"] span.label {
+        position: relative;
+        z-index: 2;
+    }
+
+    un-btn[data-theme="swipe"]:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: color-mix(in oklab, var(--primary), white 80%);
+        transition: all 0.35s;
+    }
+
+    un-btn[data-theme="swipe"]:hover {
+        color: color-mix(in oklab, var(--primary), black 30%);
+    }
+
+    un-btn[data-theme="swipe"]:hover:after {
+        width: 100%;
+    }
+
+    un-btn[data-theme="swipe"]:active:after {
+        background-color: color-mix(in oklab, var(--primary), white 900%);
+    }
+}

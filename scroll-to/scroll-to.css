@@ -1,0 +1,13 @@
+scroll-to a {
+	color: black;
+	font-size: x-large;
+	text-decoration: none;
+	rotate: -90deg;
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+}
+
+scroll-to:active {
+	color: blueviolet;
+}

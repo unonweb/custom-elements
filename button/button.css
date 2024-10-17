@@ -1,0 +1,174 @@
+@layer default {
+
+    button {
+		--_color-back: var(--color-back, #d0117a);
+		--_color-font: var(--color-font, black);
+        /* reset */
+        outline: none;
+        border: none;
+        margin: 0;
+        background-color: transparent;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+        margin: 0rem;
+        padding: 0;
+        border-radius: 2px;
+  }
+
+	button[data-theme="primary"] {
+		--_color-primary: var(--primary, #d0117a);
+		--_color-back: var(--_color-primary);
+        --_color-hover: color-mix(in srgb, var(--_color-back) 80%, black);
+        --_color-active: color-mix(in srgb, var(--_color-back) 80%, white);
+        --_color-outline: color-mix(in srgb, var(--_color-back) 70%, white);
+		--_color-font: white;
+	}
+
+	button[data-theme="secondary"] {
+		--_color-primary: var(--primary, #d0117a);
+		--_color-font: var(--_color-primary);
+        --_color-back: color-mix(in srgb, var(--_color-primary) 10%, transparent);
+        --_color-hover: color-mix(in srgb, var(--_color-primary) 30%, transparent);
+        --_color-active: color-mix(in srgb, var(--_color-primary) 10%, white);
+        --_color-outline: color-mix(in srgb, var(--_color-primary) 70%, white);
+	}
+	
+	button[data-theme="tertiary"] {
+		--_color-primary: var(--primary, #d0117a);
+		--_color-back: color-mix(in srgb, var(--_color-primary) 5%, transparent);
+		--_color-hover: color-mix(in srgb, var(--_color-primary) 15%, transparent);
+		--_color-active: color-mix(in srgb, var(--_color-primary) 0%, transparent);
+		--_color-outline: color-mix(in srgb, var(--_color-primary) 70%, white);
+		--_color-font: color-mix(in srgb, var(--_color-primary) 90%, white);
+	}
+
+	button:hover {
+        background-color: var(--_color-hover);
+    }
+
+    button:active {
+        background-color: var(--_color-active);
+    }
+
+	button:focus-visible {
+        outline: 2px solid var(--_color-outline);
+        outline-offset: 1px;
+    }
+
+	button {
+		background-color: var(--_color-back);
+		color: var(--_color-font);
+		display: inline-flex;
+		flex-direction: row;
+		column-gap: 10px;
+		align-items: baseline;
+		/* transition */
+		transition-property: all;
+		transition-timing-function: linear;
+		transition-duration: 0.1s;
+	}
+
+    button * {
+        pointer-events: none;
+    }
+
+	button > .icon {
+		display: inline-block;
+		transition: transform ease-in-out 0.3s;
+	}
+
+	button[data-state="on"] > .icon {
+        transform: rotate(90deg);
+    }
+
+	/* svg 
+	--------------------------- */
+
+	button[data-html="svg"] {
+		background-color: transparent;
+	}
+	
+	button svg {
+	    fill: var(--_color-font);
+	    width: 30px;
+	    height: 30px;
+	}
+
+    /* [data-html="triplebar"] 
+	--------------------------- */
+    button[data-html="triplebar"] {
+		background-color: transparent;
+        width: 30px;
+        z-index: 3;
+        position: relative;
+        flex-direction: column;
+    }
+
+    button[data-html="triplebar"] .bar {
+        outline-color: black;
+        outline-offset: 0px;
+        outline-width: 1px;
+        outline-style: solid;
+        background-color: var(--_color-back);
+        border-radius: 25px;
+        box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
+        height: 4px;
+        width: 30px;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.13, 0.24, 0.35, 1.64);
+    }
+
+    button[data-html="triplebar"][data-state="on"] .bar.one {
+        transform: translate(0, 9px) rotate(45deg);
+    }
+
+    button[data-html="triplebar"][data-state="on"] .bar.two {
+        background-color: transparent;
+        outline-color: transparent;
+        box-shadow: none;
+        transform: translateX(-55px);
+    }
+
+    button[data-html="triplebar"][data-state="on"] .bar.three {
+        transform: translate(0, -14px) rotate(-45deg);
+    }
+
+    button[data-html="triplebar"] :is(.bar.one, .bar.two) {
+        margin-bottom: 6px;
+    }
+
+    /* @keyframes 
+	--------------------------- */
+    @keyframes wiggle {
+        0%,
+        7% {
+            transform: rotateZ(0);
+        }
+
+        15% {
+            transform: rotateZ(-15deg);
+        }
+
+        20% {
+            transform: rotateZ(10deg);
+        }
+
+        25% {
+            transform: rotateZ(-10deg);
+        }
+
+        30% {
+            transform: rotateZ(6deg);
+        }
+
+        35% {
+            transform: rotateZ(-4deg);
+        }
+
+        40%,
+        100% {
+            transform: rotateZ(0);
+        }
+    }
+}

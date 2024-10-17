@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>A</title>
+	<!-- this -->
+	<link rel='stylesheet' type='text/css' media='screen' href='a.css'>
+	<script src='a.js' type='module'></script>
+	<script type="module">
+		import A from './a.js'
+		
+		initAnchors()
+
+		function initAnchors() {
+			// example of how to call it:
+			let anchors = document.querySelectorAll('a')
+			console.log('anchors found: ', anchors)
+			for (const a of anchors) {
+				new A({ element: a })
+			}
+		}
+	</script>
+	<style>
+		html {
+			--color-primary: #2e9898;
+			--color-secondary: darkblue;
+		}
+
+		button {
+			margin: 2rem;
+		}
+	</style>
+</head>
+
+<body>
+	<a data-html="svg" data-svg="bandcamp"></a>
+	<a data-html="svg" data-svg="bandcamp-1"></a>
+	<a data-html="svg" data-svg="facebook"></a>
+	<a data-html="svg" data-svg="youtube"></a>
+	<a data-html="svg" data-svg="instagram"></a>
+	<a data-html="svg" data-svg="spotify"></a>
+</body>
+
+</html>

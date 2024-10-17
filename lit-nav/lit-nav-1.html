@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html data-theme="">
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>lit-nav</title>
+	<link rel='stylesheet' type='text/css' media='screen' href='lit-nav.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/lit-nav.md-1.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../button/button.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../button/themes/button.vaadin.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../drop-down/drop-down.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../drop-down/themes/drop-down.un-1.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../drop-down/themes/drop-down.md-1.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../un-select/un-select.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../a/themes/a.md-1.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='http://127.0.0.1:8000/css/variables/colors.css'>
+	<!-- <script src='../button/button.js' type='module'></script> -->
+	<script src='../ce-native/ce-native.js' type='module'></script>
+	<script src='../drop-down/drop-down.js' type='module'></script>
+	<script src='../un-select/un-select.js' type='module'></script>
+	<script src='lit-nav.js' type='module'></script>
+	<style>
+		html {
+			--primary: #5b838a;
+			color: black;
+		}
+
+		section {
+			margin: 2rem;
+		}
+
+		h1 {
+			font-family: monospace;
+		}
+
+		main {
+			width: 70%;
+			margin: auto;
+			padding: 5rem;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<section hidden>
+			<h1>lit-nav dropdown="always"</h1>
+			<lit-nav dropdown="always" log="">
+				<drop-down data-anim="softdrop">
+					<ce-native>
+						<button>Choose! <span class="icon">&#9660;</span></button>
+					</ce-native>
+					<ul class="content default">
+						<li><a href="/gallery">Gallery</a></li>
+						<li><a href="/support">Support</a></li>
+						<li><a href="/home">Home</a></li>
+						<li><a href="">Current</a></li>
+						<li>
+							<un-select>
+								<select name="menu">
+									<option value="home">Home</option>
+									<option value="about">About Us </option>
+									<option value="contact">Contact Us </option>
+								</select>
+							</un-select>
+						</li>
+					</ul>
+					<ul class="content offset">
+						<li><a href="">Link 1</a></li>
+					</ul>
+				</drop-down>
+			</lit-nav>
+		</section>
+		<section hidden>
+			<!-- issue: drop-down present but without content -->
+			<h1>lit-nav dropdown="maybe"</h1>
+			<lit-nav dropdown="maybe">
+				<ul class="content default">
+					<li><a href="/gallery">Gallery</a></li>
+					<li><a href="/support">Support</a></li>
+					<li><a href="/home">Home</a></li>
+					<li><a href="">Current</a></li>
+					<li>
+						<un-select>
+							<select name="menu">
+								<option value="home">Home</option>
+								<option value="about">About Us </option>
+								<option value="contact">Contact Us </option>
+							</select>
+						</un-select>
+					</li>
+				</ul>
+				<drop-down data-anim="softdrop">
+					<ce-native>
+						<button>Choose! <span class="icon">&#9660;</span></button>
+					</ce-native>
+				</drop-down>
+			</lit-nav>
+		</section>
+		<section>
+			<h1>lit-nav dropdown="maybe" without drop-down</h1>
+			<lit-nav dropdown="maybe" log="lifecycle">
+				<ce-native>
+					<button>Choose! <span class="icon">&#9660;</span></button>
+				</ce-native>
+				<ul class="content default"><ul class="content default"></ul>
+					<li><a href="/gallery">Gallery</a></li>
+					<li><a href="/support">Support</a></li>
+					<li><a href="/home">Home</a></li>
+					<li><a href="">Current</a></li>
+					<li>
+						<un-select>
+							<select name="menu">
+								<option value="home">Home</option>
+								<option value="about">About Us </option>
+								<option value="contact">Contact Us </option>
+							</select>
+						</un-select>
+					</li>
+				</ul>
+			</lit-nav>
+		</section>
+		<section hidden>
+			<h1>lit-nav theme="" dropdown="none"</h1>
+			<lit-nav theme="" dropdown="none">
+				<ul class="content default">
+					<li><a href="#">React</a></li>
+					<li><a href="#">Angular</a></li>
+					<li><a href="#">Vue</a></li>
+					<li><a href="#">Svelte</a></li>
+					<li>
+						<drop-down data-anim="2">
+							<ce-native><button>Choose Framwork <span class="icon">&#9660;</span></button></ce-native>
+							<ul class="content" role="menu">
+								<li><a href="#">React</a></li>
+								<li><a href="#">Angular</a></li>
+								<li><a href="#">Vue</a></li>
+							</ul>
+						</drop-down>
+					</li>
+				</ul>
+				<ul class="content offset">
+					<li><a href="">Link 1</a></li>
+				</ul>
+			</lit-nav>
+		</section>
+		<section hidden>
+			<h1>lit-nav dropdown="maybe" theme="md-1"</h1>
+			<lit-nav dropdown="maybe" theme="md-1">
+				<ul class="content default">
+					<li><a href="#">React</a></li>
+					<li><a href="#">Angular</a></li>
+					<li><a href="#">Vue</a></li>
+					<li><a href="#">Svelte</a></li>
+					<li>
+						<drop-down data-anim="softdrop">
+							<ce-native><button>Choose Framwork <span class="icon">&#9660;</span></button></ce-native>
+							<ul class="content" role="menu">
+								<li><a href="#">React</a></li>
+								<li><a href="#">Angular</a></li>
+								<li><a href="#">Vue</a></li>
+							</ul>
+						</drop-down>
+					</li>
+				</ul>
+			</lit-nav>
+		</section>
+	</main>
+</body>
+
+</html>

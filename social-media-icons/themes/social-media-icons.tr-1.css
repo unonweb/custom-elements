@@ -1,0 +1,9 @@
+@layer themes {
+	social-media-icons[theme="tr-1"] {
+		align-items: end;
+	}
+	social-media-icons[theme="tr-1"] a {
+	    display: inline-flex;
+	}
+
+}

@@ -1,0 +1,26 @@
+@layer default {
+	un-a {
+		display: contents; 
+		width: fit-content;
+		height: fit-content;
+	}
+	
+	un-a a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		color: black;
+		text-decoration-line: none;
+		cursor: pointer;
+	}
+	
+	/* has to be put at the bottom - if not it gets overwritten by theme styles */
+	
+	un-a a:focus-visible {
+		outline-offset: 2px !important;
+		outline-width: 2px !important;
+		outline-style: solid !important;
+		outline-color: green !important;
+	}
+}

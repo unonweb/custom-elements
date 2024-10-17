@@ -1,0 +1,10 @@
+@layer themes {
+    button[data-theme="md-1"] {
+        --_color-back: transparent;
+    }
+    
+    ce-nav > drop-down > button[data-theme="md-1"] {
+        --_color-back: var(--complementary-alpha-25);
+        padding: 5px;
+     }
+}

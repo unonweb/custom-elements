@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>playground</title>
+
+	<link rel='stylesheet' type='text/css' media='screen' href='img-gallery/img-gallery.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='ce-nav/ce-nav.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='ce-select/ce-select.css'>
+	
+	<script src="img-gallery/img-gallery.js" type="module"></script>
+	<script src="ce-native/ce-native.js" type="module"></script>
+	<script src="ce-nav/ce-nav.js" type="module"></script>
+	<script src="ce-select/ce-select.js" type="module"></script>
+	<style>
+		body {
+			margin: 3rem;
+		}
+
+		header {
+			height: 300px;
+		}
+
+		main {
+			width: 80%;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<ce-nav data-dropdown="maybe" data-sticky="true" data-theme="md-1">
+		<div class="content">
+			<ul class="default">
+				<li><a href="/gallery">Gallery</a></li>
+				<li><a href="/support">Support</a></li>
+				<li><a href="/home">Home</a></li>
+				<li><a href="http://127.0.0.1:8000/custom-elements/prod/ce-nav/ce-nav.html">Current</a></li>
+				<li>
+					<ce-select>
+						<select name="menu">
+							<option value="home">Home</option>
+							<option value="about">About Us </option>
+							<option value="contact">Contact Us </option>
+						</select>
+					</ce-select>
+				</li>
+			</ul>
+			<ul class="offset">
+				<li><a href="#">React</a></li>
+				<li><a href="#">Angular</a></li>
+				<li><a href="#">Vue</a></li>
+				<li><a href="#">Svelte</a></li>
+			</ul>
+		</div>
+		<drop-down data-state="off" data-overlay="true">
+			<ce-native><button>Click</button></ce-native>
+			<div class="content">
+				<ul class="default">
+					<li><a href="/gallery">Gallery</a></li>
+					<li><a href="/support">Support</a></li>
+					<li><a href="/home">Home</a></li>
+					<li><a href="http://127.0.0.1:8000/custom-elements/prod/ce-nav/ce-nav.html">Current</a></li>
+					<li>
+						<un-select>
+							<select name="menu">
+								<option value="home">Home</option>
+								<option value="about">About Us </option>
+								<option value="contact">Contact Us </option>
+							</select>
+						</un-select>
+					</li>
+				</ul>
+				<ul class="offset">
+					<li><a href="#">React</a></li>
+					<li><a href="#">Angular</a></li>
+					<li><a href="#">Vue</a></li>
+					<li><a href="#">Svelte</a></li>
+				</ul>
+			</div>
+		</drop-down>
+	</ce-nav>
+	<main>
+		<img-gallery data-layout="flex-masonry" data-onclick="modal">
+			<img-dialog></img-dialog>
+			<img src="/assets/img/geometric_love_kette_3.jpg">
+			<img src="/assets/img/echter_baldrian_valeriana_officinalis_3.jpg">
+			<img src="/assets/img/malina-auge-1084.webp">
+			<img src="/assets/img/eca494d23ad56e2ed4eba75b9b95e66d-1024x683.webp">
+			<img src="/assets/img/bokeh-spinnennetz-1163-crop-2.webp">
+			<img src="/assets/img/IMG_1172.webp">
+			<img src="/assets/img/spinne-1177.webp">
+			<img src="/assets/img/wiesensalbei_salvia_pratensis_1.jpg">
+		</img-gallery>
+	</main>
+</body>
+</html>

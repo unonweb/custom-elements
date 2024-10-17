@@ -1,0 +1,246 @@
+@layer default {
+	lit-posts {
+		/*! padding: 25px; */
+		position: relative;
+		display: block;
+	}
+
+	/* ctrls */
+	/* --------------------------- */
+	lit-posts .ctrls {
+		display: none;
+		/* hide on mobiles */
+		position: absolute;
+		left: 100%;
+		top: 0;
+	}
+	
+	/* table of contents */
+	/* ---------------------------- */
+	lit-posts .toc ul {
+		display: flex;
+		flex-direction: column;
+		row-gap: 5px;
+		position: sticky;
+		top: 5%;
+		/*! align-self: flex-start; */
+		/*! height: 200px; */
+	}
+
+	lit-posts .toc-item {
+		font-size: small;
+		color: black;
+		text-decoration: none;
+	}
+
+	lit-posts .toc-item:hover {
+		color: var(--page-color);
+	}
+
+	/* input radio sortdirection */
+	/* -------------------------- */
+	lit-posts input[name="sortdirection"] {
+		/* radio svg */
+		appearance: none;
+	}
+
+	lit-posts input[name="sortdirection"]~label svg {
+		/* radio svg */
+		width: 15px;
+		fill: var(--page-color-light);
+		opacity: 0.5;
+		cursor: pointer;
+	}
+
+	lit-posts input[name="sortdirection"]:checked~label svg {
+		/* radio svg */
+		opacity: 1;
+	}
+
+	/* input radio sortdirection */
+	/* -------------------------- */
+	lit-posts input[name="sortcriteria"] {
+		/*! border-radius: 50%; */
+	}
+
+	lit-posts[theme=""] input[name="sortcriteria"]:checked {
+		outline: 5px solid black;
+		outline-offset: -6px;
+	}
+
+	/* scrollToTop button */
+	/* --------------------------- */
+	lit-posts a#scrollToTop {
+		appearance: none;
+		background: none;
+		outline: none;
+		border: none;
+		cursor: pointer;
+		transform: rotate(-90deg);
+		text-decoration: none;
+		font-size: xx-large;
+		color: var(--page-color-transpest);
+		position: fixed;
+		bottom: 3vh;
+		right: 3vw;
+		z-index: 99;
+	}
+
+	lit-posts a#scrollToTop:hover {
+		color: var(--page-color-light);
+	}
+
+	/* posts */
+	/* --------------------------- */
+	lit-posts .posts {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		row-gap: 25px;
+	}
+
+	lit-posts .ctrls {
+		display: none;
+	}
+
+	/* post header */
+	/* --------------------------- */
+	lit-posts[collapsible] header.meta {
+		cursor: pointer;
+	}
+
+	lit-posts header.meta.scrolledTo {
+		animation-name: color;
+		animation-iteration-count: 1;
+		animation-duration: 2s;
+		animation-delay: 150ms;
+		animation-timing-function: ease-in-out;
+	}
+
+	/* post content */
+	/* --------------------------- */
+	lit-posts .content {
+		margin-left: 0;
+		animation-name: fade-in;
+		animation-duration: 350ms;
+		animation-fill-mode: forwards;
+		animation-timing-function: linear;
+	}
+
+	lit-posts .content.hide {
+		animation-name: fade-out;
+		animation-duration: 250ms;
+		animation-fill-mode: forwards;
+		animation-timing-function: linear;
+	}
+
+	lit-posts .content > * {
+		/* margin-top: 20px; */
+	}
+
+	/* @media */
+	/* --------------------- */
+	@media (min-width: 640px) {
+		lit-posts .meta {
+			grid-auto-flow: column;
+			margin: 0;
+		}
+
+		lit-posts .content {
+			margin-left: 20px;
+		}
+	}
+
+	@media (min-width: 640px) {
+		lit-posts {
+			width: 50vw;
+		}
+	}
+
+	@media (min-width: 1280px) {
+
+		/* ctrls */
+		lit-posts .ctrls {
+			display: flex;
+			/* show */
+			flex-direction: column;
+			padding-left: 10%;
+			/* padding-right: 10%; */
+			width: 50%;
+			min-width: 150px;
+			row-gap: 3vh;
+			height: 100%;
+			position: absolute;
+		}
+	}
+
+	/* @keyframes */
+	/* --------------------- */
+	@keyframes fade-in {
+		0% {
+			display: block;
+			opacity: 0;
+			max-height: 0%;
+		}
+
+		100% {
+			opacity: 1;
+			max-height: 100%;
+		}
+	}
+
+	@keyframes fade-out {
+		0% {
+			opacity: 1;
+			max-height: 100%;
+		}
+
+		50% {
+			opacity: 0;
+			max-height: 0%;
+		}
+
+		100% {
+			position: absolute;
+			visibility: hidden;
+			opacity: 0;
+			max-height: 0%;
+		}
+	}
+
+	@keyframes color {
+		from {
+			color: var(--complementary);
+		}
+
+		to {
+			color: black;
+		}
+	}
+
+	@keyframes shake-x {
+		0% {
+			transform: skewX(-15deg);
+		}
+
+		1% {
+			transform: skewX(15deg);
+		}
+
+		2% {
+			transform: skewX(-15deg);
+		}
+
+		3% {
+			transform: skewX(15deg);
+		}
+
+		5% {
+			transform: skewX(0deg);
+		}
+
+		100% {
+			transform: skewX(0deg);
+		}
+	}
+}

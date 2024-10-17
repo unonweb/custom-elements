@@ -1,0 +1,21 @@
+loading-spinner {
+	--color-one: #f3f3f3;
+	--color-two: var(--primary, #3498db);
+	--size: 120px;
+	display: block;
+	border: 16px solid var(--color-one); /* Light grey */
+	border-top: 16px solid var(--color-two); /* Blue */
+	border-radius: 50%;
+	width: var(--size);
+	aspect-ratio: 1;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

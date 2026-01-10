@@ -1,3 +1,6 @@
 [submodule "assets/custom-elements/img-slides"]
 	path = assets/custom-elements/img-slides
 	url = git@github.com:unonweb/img-slides.git
+[submodule "assets/custom-elements/img-gallery"]
+	path = assets/custom-elements/img-gallery
+	url = git@github.com:unonweb/img-gallery.git

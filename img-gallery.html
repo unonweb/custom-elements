@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>img-gallery</title>
+	<!-- css -->
+	<link rel='stylesheet' type='text/css' media='screen' href='/assets/custom-elements/img-dialog/img-dialog.css'>
+	<!-- this -->
+	<link rel='stylesheet' type='text/css' media='screen' href='/assets/custom-elements/img-gallery/style.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='/assets/custom-elements/img-gallery/themes/img-gallery.hg-1.css'>
+	<script src="/assets/custom-elements/img-gallery/main.js" type="module"></script>
+	<style>
+		body {
+			margin: 3rem;
+		}
+
+		header {
+			height: 300px;
+		}
+
+		main {
+			width: 80%;
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<img-gallery data-layout="flex-masonry" data-onclick="modal">
+			<img-dialog></img-dialog>
+			<img src="/assets/img/geometric_love_kette_3.jpg">
+			<img src="/assets/img/echter_baldrian_valeriana_officinalis_3.jpg">
+			<img src="/assets/img/malina-auge-1084.webp">
+			<img src="/assets/img/eca494d23ad56e2ed4eba75b9b95e66d-1024x683.webp">
+			<img src="/assets/img/bokeh-spinnennetz-1163-crop-2.webp">
+			<img src="/assets/img/IMG_1172.webp">
+			<img src="/assets/img/spinne-1177.webp">
+			<img src="/assets/img/wiesensalbei_salvia_pratensis_1.jpg">
+		</img-gallery>
+	</main>
+</body>
+
+</html>

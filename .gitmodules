@@ -4,3 +4,12 @@
 [submodule "assets/custom-elements/img-gallery"]
 	path = assets/custom-elements/img-gallery
 	url = git@github.com:unonweb/img-gallery.git
+[submodule "assets/custom-elements/img-dialog"]
+	path = assets/custom-elements/img-dialog
+	url = git@github.com:unonweb/img-dialog.git
+[submodule "assets/custom-elements/nav-toc"]
+	path = assets/custom-elements/nav-toc
+	url = git@github.com:unonweb/nav-toc.git
+[submodule "assets/custom-elements/wrap-native"]
+	path = assets/custom-elements/wrap-native
+	url = git@github.com:unonweb/wrap-native.git

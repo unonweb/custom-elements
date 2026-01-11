@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html data-theme="">
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>img-dialog</title>
+	<link rel='stylesheet' type='text/css' media='screen' href='/assets/custom-elements/img-gallery/style.css'>
+	<script src='/assets/custom-elements/img-gallery/main.js' type="module"></script>
+	<!-- this -->
+	<link rel='stylesheet' type='text/css' media='screen' href='/assets/custom-elements/img-dialog/themes/img-dialog.hg-1.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='/assets/custom-elements/img-dialog/style.css'>
+	<script src='/assets/custom-elements/img-dialog/main.js' type="module"></script>
+	<style>
+		main {
+			margin: auto;
+			width: 70%;
+			border: 5px solid beige;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<h1>img-dialog [data-modal="true"]</h1>
+		<img-gallery id="gallery-1" data-modal="img-dialog" data-number="4">
+			<img-dialog data-src="siblings" data-modal="true" data-bullets="false"></img-dialog>
+			<img src="/assets/img/eca494d23ad56e2ed4eba75b9b95e66d.webp">
+			<img src="/assets/img/schmale_ringe_3.jpg">
+			<img src="/assets/img/schmale_ringe_6.jpg">
+			<img src="/assets/img/geometric_love_kette_3.jpg">
+			<img src="/assets/img/eca494d23ad56e2ed4eba75b9b95e66d.webp">
+			<img src="/assets/img/schmale_ringe_3.jpg">
+			<img src="/assets/img/schmale_ringe_6.jpg">
+			<img src="/assets/img/geometric_love_kette_3.jpg">
+		</img-gallery>
+		<hr>
+		<h1>img-dialog [data-modal="false"]</h1>
+		<img-gallery id="modal-false" data-modal="img-dialog">
+			<img-dialog data-src="siblings" data-modal="false"></img-dialog>
+			<img src="/assets/img/eca494d23ad56e2ed4eba75b9b95e66d.webp">
+			<img src="/assets/img/schmale_ringe_3.jpg">
+			<img src="/assets/img/schmale_ringe_6.jpg">
+			<img src="/assets/img/geometric_love_kette_3.jpg">
+			<img src="/assets/img/eca494d23ad56e2ed4eba75b9b95e66d.webp">
+			<img src="/assets/img/schmale_ringe_3.jpg">
+			<img src="/assets/img/schmale_ringe_6.jpg">
+			<img src="/assets/img/geometric_love_kette_3.jpg">
+		</img-gallery>
+	</main>
+</body>
+
+</html>

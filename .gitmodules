@@ -13,3 +13,24 @@
 [submodule "assets/custom-elements/wrap-native"]
 	path = assets/custom-elements/wrap-native
 	url = git@github.com:unonweb/wrap-native.git
+[submodule "assets/commons/button"]
+	path = assets/commons/button
+	url = git@github.com:unonweb/button.git
+[submodule "assets/custom-elements/drop-down"]
+	path = assets/custom-elements/drop-down
+	url = git@github.com:unonweb/drop-down.git
+[submodule "assets/commons/details"]
+	path = assets/commons/details
+	url = git@github.com:unonweb/details.git
+[submodule "assets/commons/sticky"]
+	path = assets/commons/sticky
+	url = git@github.com:unonweb/sticky.git
+[submodule "assets/custom-elements/lit-toc"]
+	path = assets/custom-elements/lit-toc
+	url = git@github.com:unonweb/lit-toc.git
+[submodule "assets/custom-elements/lit-posts"]
+	path = assets/custom-elements/lit-posts
+	url = git@github.com:unonweb/lit-posts.git
+[submodule "assets/commons/lit-controllers"]
+	path = assets/commons/lit-controllers
+	url = git@github.com:unonweb/lit-controllers.git

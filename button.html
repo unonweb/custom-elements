@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>Button</title>
+	<link rel='stylesheet' type='text/css' media='screen' href='button.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/button.themes.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/button.grozdic.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/button.hg-1.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/button.office.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/button.triplebar-suedstadt.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/button.un-1.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/button.vaadin.css'>
+	<script src='button.js' type='module'></script>
+	<script type="module">
+		import Button from './button.js'
+		let buttons = document.querySelectorAll('button')
+		console.log('buttons found: ', buttons)
+		for (const button of buttons) {
+			new Button({ element: button })
+		}
+	</script>
+	<style>
+		html {
+			--color-primary: #2e9898;
+			--color-secondary: darkblue;
+		}
+		button {
+			margin: 2rem;
+		}
+	</style>
+</head>
+<body>
+	<!-- <button>&#9733;</button>
+	<button data-html="triplebar"></button>
+	<button data-html="icon" data-icon="&#9733;" data-insert="beforeend">Click</button>
+	<button data-html="svg" data-svg="playpause"></button> -->
+
+	<button data-var="primary" data-html="svg" data-svg="play"></button>
+	<button data-var="secondary" data-html="svg" data-svg="pause"></button>
+	<button data-var="tertiary" data-html="svg" data-svg="stop"></button>
+
+	<!-- <h1>vaadin</h1>
+	<button data-theme="vaadin-1">&#9733;</button>
+	<button data-theme="vaadin-2">&#9733;</button>
+	<button data-theme="vaadin-3">&#9733;</button>
+	<h1>swipe</h1>
+	<button data-theme="swipe">Swipe Me</button>
+
+	<button data-theme="grozdic">Drop Down <span class="arrow">&#10140;</span></button> -->
+</body>
+</html>

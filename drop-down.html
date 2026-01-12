@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html data-theme="md-1">
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>drop-down</title>
+	<link rel='stylesheet' type='text/css' media='screen' href='drop-down.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/drop-down.md-1.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='themes/drop-down.un-1.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='http://127.0.0.1:7999/css/variables/colors.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../button/button.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../button/themes/button.vaadin.css'>
+	<script src='drop-down.js' type='module'></script>
+	<script src='../ce-native/ce-native.js' type='module'></script>
+	<script src='../html/html.js' type='module'></script>
+	<style>
+		html {
+			--primary: #445161;
+		}
+
+		main {
+			width: 60%;
+			padding: 5rem;
+			margin: auto;
+		}
+
+		main>drop-down {
+			margin: 2rem;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<drop-down id="1" data-anim="softdrop" data-state="off" data-template="ex" data-on="hover" data-off="any" data-dest=".content">
+			<button type="button">Drop Me <span class="icon">&#10132;</span></button>
+			<ul class="content">
+				<li><a href="#">Unonweb</a></li>
+				<li><a href="#">Angular</a></li>
+				<li><a href="#">Vue</a></li>
+				<li><a href="#">Svelte</a></li>
+				<li>
+					<drop-down id="2" data-anim="2" data-dest='[role="menu"]' data-state="off">
+						<button>Choose Framwork <span class="icon">&#9660;</span></button>
+						<ul role="menu">
+							<li><a href="#">React</a></li>
+							<li><a href="#">Angular</a></li>
+							<li><a href="#">Vue</a></li>
+						</ul>
+					</drop-down>
+				</li>
+			</ul>
+		</drop-down>
+		<!-- template -->
+		<template id="12"><ce-native><button data-html="triplebar"></button></ce-native>
+			<ul class="drop-content">
+				<li><a href="#">template</a></li>
+				<li><a href="#">template</a></li>
+				<li><a href="#">template</a></li>
+				<li><a href="#">template</a></li>
+				<li>
+					<drop-down data-anim="2" data-state="off">
+						<button>Choose Framwork <span class="icon">&#9660;</span></button>
+						<ul class="drop-content" role="menu">
+							<li><a href="#">React</a></li>
+							<li><a href="#">Angular</a></li>
+							<li><a href="#">Vue</a></li>
+						</ul>
+					</drop-down>
+				</li>
+			</ul>
+		</template>
+	</main>
+</body>
+
+</html>

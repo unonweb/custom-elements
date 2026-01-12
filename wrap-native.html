@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html data-theme="vaadin" lang="en">
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>ce-native</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="stylesheet" href="../details/details.css">
+	<link rel="stylesheet" href="../details/themes/details.dark.css">
+	<link rel="stylesheet" href="../button/button.css">
+	<link rel="stylesheet" href="../button/themes/button.vaadin.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://127.0.0.1:7999/css/variables/colors.css" />
+	<script src="ce-native.js" type="module"></script>
+	<style>
+		html {
+			--primary: #674095;
+		}
+
+		main {
+			display: grid;
+			place-items: center center;
+			gap: 2rem;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<ce-native data-is="details">
+			<details data-icon="html">
+				<summary><span class="icon">➜</span>I can change this too.</summary>
+				<div class="content">
+					<p>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi unde, ex rem voluptates autem aliquid veniam quis temporibus repudiandae illo, nostrum, pariatur quae! At animi modi dignissimos corrupti placeat voluptatum!
+					</p>
+					<img src="https://placebear.com/400/200" alt="">
+					<p>
+						Facilis ducimus iure officia quos possimus quaerat iusto, quas, laboriosam sapiente autem ab assumenda eligendi voluptatum nisi eius cumque, tempore reprehenderit optio placeat praesentium non sint repellendus consequuntur? Nihil, soluta.
+					</p>
+				</div>
+			</details>
+		</ce-native>
+		<ce-native data-is="button">
+			<button data-theme="vaadin-1" data-on="click" data-off="any">Click</button>
+		</ce-native>
+		<ce-native data-is="button">
+			<button data-theme="vaadin-1" data-on="click" data-off="self" aria-label="right">&#10095;</button>
+		</ce-native>
+		<ce-native data-is="button">
+			<button data-theme="vaadin-1" data-on="click" data-off="self">vaadin-1</button>
+		</ce-native data-is="button">
+		<ce-native data-is="button">
+			<button data-theme="vaadin-2">vaadin-2</button>
+		</ce-native data-is="button">
+		<ce-native data-is="button">
+			<button data-theme="vaadin-3">vaadin-3</button>
+		</ce-native>
+		<!-- <ce-native data-theme="triplebar" data-html="triplebar" data-label="menu"></ce-native>
+		<ce-native data-theme="triplebar-suedstadtsause" data-html="triplebar" data-label="menu"></ce-native>
+		<ce-native data-theme="triplebar-vaadin" data-html="triplebar" data-label="menu"></ce-native>
+		<ce-native data-theme="swipe" data-on="hover">swipe me</ce-native> -->
+
+		<ce-native data-is="button">
+			<button data-theme="grozdic"><span class="arrow">&#10140;</span></button>
+		</ce-native>
+
+
+		<ce-native>
+			<button data-theme="" aria-label="navigation">
+				<svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
+				</svg>
+			</button>
+		</ce-native>
+	</main>
+</body>
+
+</html>
